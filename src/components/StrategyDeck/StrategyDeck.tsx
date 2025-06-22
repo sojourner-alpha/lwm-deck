@@ -16,6 +16,9 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
   const [showIntroDetails, setShowIntroDetails] = useState(false);
   const [showAboutDetails, setShowAboutDetails] = useState(false);
   const [showObjectivesDetails, setShowObjectivesDetails] = useState(false);
+  
+  // Modal state for Models slide
+  const [showModelsMatrix, setShowModelsMatrix] = useState(false);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -251,7 +254,10 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
                         // Models slide - render chart inline
                         return (
                           <div className="w-full h-full flex items-center justify-center">
-                            <SpecialElements slide={s} deckId={deck.id} />
+                            <SpecialElements 
+                              slide={s} 
+                              deckId={deck.id} 
+                            />
                           </div>
                         );
                       } else if (hasSpecialElements && s.key === 'Players') {

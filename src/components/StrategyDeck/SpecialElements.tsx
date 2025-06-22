@@ -251,7 +251,7 @@ export const SpecialElements: React.FC<SpecialElementsProps> = ({
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.8, y: 20 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white/15 backdrop-blur-md rounded-2xl border border-white/30 p-6 shadow-2xl max-w-md w-11/12 mx-4"
+                  className="bg-white/15 backdrop-blur-md rounded-2xl border border-white/30 p-6 shadow-2xl max-w-4xl w-11/12 mx-4"
                   onClick={(e) => e.stopPropagation()}
                 >
                   {/* Close button */}
@@ -268,35 +268,17 @@ export const SpecialElements: React.FC<SpecialElementsProps> = ({
                     COMPETITIVE MATRIX
                   </h3>
                   
-                  {/* Players Matrix Table */}
-                  <div className="space-y-3">
-                    {[
-                      { company: 'OpenAI', strength: 'Broad AI', model: 'GPT-4o', score: 95 },
-                      { company: 'Google', strength: 'Search Data', model: 'Gemini', score: 90 },
-                      { company: 'Anthropic', strength: 'Safety', model: 'Claude', score: 85 },
-                      { company: 'Meta', strength: 'Open Source', model: 'Llama', score: 80 },
-                      { company: 'High-Flyer Quant', strength: 'Cost Efficiency', model: 'V3', score: 75 }
-                    ].map((player, idx) => (
-                      <div key={idx} className="bg-black/30 rounded-lg p-3 border border-white/20">
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="text-white font-medium text-sm">{player.company}</span>
-                          <span className="text-white/70 text-xs">{player.model}</span>
-                        </div>
-                        <div className="text-white/60 text-xs mb-2">{player.strength}</div>
-                        <div className="bg-white/20 rounded-full h-2 overflow-hidden">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            animate={{ width: `${player.score}%` }}
-                            transition={{ duration: 1, delay: 0.2 + idx * 0.1 }}
-                            className="h-full bg-gradient-to-r from-blue-400 to-purple-400"
-                          />
-                        </div>
-                      </div>
-                    ))}
+                  {/* Foundation Models Image Display */}
+                  <div className="flex justify-center">
+                    <img 
+                      src="/images/foundationmodels.png" 
+                      alt="Foundation Models Competitive Matrix"
+                      className="max-w-full max-h-[105vh] object-contain rounded-lg shadow-2xl"
+                    />
                   </div>
                   
                   <div className="mt-4 text-center">
-                    <p className="text-white/60 text-sm">Market positioning strength</p>
+                    <p className="text-white/60 text-sm">Foundation models competitive landscape and positioning</p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -909,93 +891,123 @@ export const SpecialElements: React.FC<SpecialElementsProps> = ({
       );
     }
 
-    // Three-column model comparison table
+    // Enhanced AI Model Classification based on four dimensions of openness
     if (slide.key === 'Models') {
       return (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="w-full flex justify-center"
-        >
-          <div className="bg-white/15 backdrop-blur-md rounded-xl border border-white/30 p-6 shadow-xl max-w-4xl w-full">
-            <div className="grid grid-cols-3 gap-4 text-white">
-              {/* Closed Models */}
-              <div className="text-center">
-                <div className="bg-red-500/80 rounded-lg p-3 mb-3">
-                  <h4 className="font-bold text-sm mb-1">CLOSED MODELS</h4>
-                  <p className="text-xs opacity-90">[Proprietary]</p>
-                </div>
-                <div className="space-y-2 text-xs">
-                  <div className="bg-black/30 rounded p-2">
-                    <div className="font-semibold">OpenAI GPT</div>
-                    <div className="text-xs opacity-80">• GPT-4: ~1.8T params</div>
-                    <div className="text-xs opacity-80">• GPT-4o: ~1.8T params</div>
-                    <div className="text-xs opacity-80">• GPT-o1: ~100B params</div>
+        <>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="w-full flex justify-center h-full"
+          >
+            <div className="bg-white/15 backdrop-blur-md rounded-xl border border-white/30 p-3 shadow-xl max-w-5xl w-full h-full max-h-full overflow-hidden flex flex-col">
+              {/* Header: Four Dimensions - More compact */}
+              <div className="mb-2 text-center flex-shrink-0">
+                <div className="grid grid-cols-4 gap-1 text-xs text-white/80 mb-2">
+                  <div className="bg-black/30 rounded p-1.5">
+                    <div className="font-semibold text-blue-300 text-xs">Weights</div>
+                    <div className="text-xs">Parameters</div>
                   </div>
-                  <div className="bg-black/30 rounded p-2">
-                    <div className="font-semibold">Google Gemini</div>
-                    <div className="text-xs opacity-80">• Gemini Ultra: ~1T+ params</div>
-                    <div className="text-xs opacity-80">• Gemini Pro: ~175B params</div>
-                    <div className="text-xs opacity-80">• Gemini Flash: ~8B params</div>
+                  <div className="bg-black/30 rounded p-1.5">
+                    <div className="font-semibold text-green-300 text-xs">Architecture</div>
+                    <div className="text-xs">Code/algorithms</div>
                   </div>
-                </div>
-              </div>
-
-              {/* Hybrid Models */}
-              <div className="text-center">
-                <div className="bg-purple-500/80 rounded-lg p-3 mb-3">
-                  <h4 className="font-bold text-sm mb-1">HYBRID MODELS</h4>
-                  <p className="text-xs opacity-90">[Closed Source + API]</p>
-                </div>
-                <div className="space-y-2 text-xs">
-                  <div className="bg-black/30 rounded p-2">
-                    <div className="font-semibold">Anthropic Claude</div>
-                    <div className="text-xs opacity-80">• Claude 4 Opus: Unknown</div>
-                    <div className="text-xs opacity-80">• Claude 3.5 Sonnet: ~175B</div>
-                    <div className="text-xs opacity-80">• Claude 3 Haiku: ~8B</div>
+                  <div className="bg-black/30 rounded p-1.5">
+                    <div className="font-semibold text-purple-300 text-xs">Training Data</div>
+                    <div className="text-xs">Dataset sources</div>
                   </div>
-                  <div className="bg-black/30 rounded p-2">
-                    <div className="font-semibold">Alibaba Qwen</div>
-                    <div className="text-xs opacity-80">• Qwen 2.5: 7B-72B params</div>
-                    <div className="text-xs opacity-80">• Qwen-Max: 235B params</div>
-                    <div className="text-xs opacity-80">• Qwen-Coder: 32B params</div>
+                  <div className="bg-black/30 rounded p-1.5">
+                    <div className="font-semibold text-amber-300 text-xs">Licensing</div>
+                    <div className="text-xs">Commercial use</div>
                   </div>
                 </div>
               </div>
 
-              {/* Open Models */}
-              <div className="text-center">
-                <div className="bg-green-500/80 rounded-lg p-3 mb-3">
-                  <h4 className="font-bold text-sm mb-1">OPEN MODELS</h4>
-                  <p className="text-xs opacity-90">[Open Weights]</p>
-                </div>
-                <div className="space-y-2 text-xs">
-                  <div className="bg-black/30 rounded p-2">
-                    <div className="font-semibold">Meta LLaMA</div>
-                    <div className="text-xs opacity-80">• LLaMA 3.1: 8B-405B params</div>
-                    <div className="text-xs opacity-80">• LLaMA 3.2: 1B-90B params</div>
-                    <div className="text-xs opacity-80">• LLaMA 2: 7B-70B params</div>
+              {/* Main content - flex-1 to fill available space */}
+              <div className="grid grid-cols-3 gap-2 text-white flex-1 min-h-0">
+                {/* 🔓 Fully Open Models */}
+                <div className="text-center flex flex-col">
+                  <div className="bg-green-500/80 rounded-lg p-1.5 mb-1.5 flex-shrink-0">
+                    <h4 className="font-bold text-xs mb-0.5">🔓 FULLY OPEN</h4>
+                    <p className="text-xs opacity-90">All 4 dimensions open</p>
                   </div>
-                  <div className="bg-black/30 rounded p-2">
-                    <div className="font-semibold">DeepSeek</div>
-                    <div className="text-xs opacity-80">• DeepSeek R1: 671B (37B active)</div>
-                    <div className="text-xs opacity-80">• DeepSeek V3: 671B (37B active)</div>
-                    <div className="text-xs opacity-80">• DeepSeek Coder: 236B params</div>
+                  <div className="space-y-1 text-xs flex-1">
+                    <div className="bg-black/30 rounded p-1.5">
+                      <div className="font-semibold text-green-300 text-xs">Mistral 7B</div>
+                      <div className="text-xs opacity-80">✅ Weights + Architecture + Data + Apache 2.0</div>
+                    </div>
+                    <div className="bg-black/30 rounded p-1.5">
+                      <div className="font-semibold text-green-300 text-xs">Pythia (EleutherAI)</div>
+                      <div className="text-xs opacity-80">✅ Full research stack + Permissive license</div>
+                    </div>
+                  </div>
+                  <div className="mt-1 text-xs text-green-300 font-medium flex-shrink-0">
+                    Best for: Research, transparency
+                  </div>
+                </div>
+
+                {/* 🟠 Hybrid/Semi-Open Models */}
+                <div className="text-center flex flex-col">
+                  <div className="bg-amber-500/80 rounded-lg p-1.5 mb-1.5 flex-shrink-0">
+                    <h4 className="font-bold text-xs mb-0.5">🟠 HYBRID/SEMI-OPEN</h4>
+                    <p className="text-xs opacity-90">Some dimensions open</p>
+                  </div>
+                  <div className="space-y-1 text-xs flex-1">
+                    <div className="bg-black/30 rounded p-1.5">
+                      <div className="font-semibold text-amber-300 text-xs">Meta LLaMA 3.1</div>
+                      <div className="text-xs opacity-80">✅ Weights + Architecture ❌ Data + License</div>
+                    </div>
+                    <div className="bg-black/30 rounded p-1.5">
+                      <div className="font-semibold text-amber-300 text-xs">Google Gemma</div>
+                      <div className="text-xs opacity-80">✅ Weights + Code ❌ Undisclosed data</div>
+                    </div>
+                    <div className="bg-black/30 rounded p-1.5">
+                      <div className="font-semibold text-amber-300 text-xs">DeepSeek R1</div>
+                      <div className="text-xs opacity-80">✅ Weights + MIT ❌ Synthetic datasets</div>
+                    </div>
+                  </div>
+                  <div className="mt-1 text-xs text-amber-300 font-medium flex-shrink-0">
+                    Best for: Education, controlled deployments
+                  </div>
+                </div>
+
+                {/* 🔒 Closed Models */}
+                <div className="text-center flex flex-col">
+                  <div className="bg-red-500/80 rounded-lg p-1.5 mb-1.5 flex-shrink-0">
+                    <h4 className="font-bold text-xs mb-0.5">🔒 CLOSED/PROPRIETARY</h4>
+                    <p className="text-xs opacity-90">Black box systems</p>
+                  </div>
+                  <div className="space-y-1 text-xs flex-1">
+                    <div className="bg-black/30 rounded p-1.5">
+                      <div className="font-semibold text-red-300 text-xs">OpenAI GPT-4o</div>
+                      <div className="text-xs opacity-80">❌ All closed ✅ Heavy engineering</div>
+                    </div>
+                    <div className="bg-black/30 rounded p-1.5">
+                      <div className="font-semibold text-red-300 text-xs">Anthropic Claude</div>
+                      <div className="text-xs opacity-80">❌ Proprietary ✅ Performance optimized</div>
+                    </div>
+                    <div className="bg-black/30 rounded p-1.5">
+                      <div className="font-semibold text-red-300 text-xs">Google Gemini</div>
+                      <div className="text-xs opacity-80">❌ Closed system ✅ Production ready</div>
+                    </div>
+                  </div>
+                  <div className="mt-1 text-xs text-red-300 font-medium flex-shrink-0">
+                    Best for: Production, reliability
                   </div>
                 </div>
               </div>
+              
+              {/* Bottom explanation - minimal spacing */}
+              <div className="mt-2 text-center flex-shrink-0">
+                <p className="text-white/80 text-xs leading-tight">
+                  <span className="font-semibold">Classification based on:</span> Access to weights, architecture transparency, training data availability, and licensing restrictions.
+                </p>
+              </div>
             </div>
-            
-            {/* Bottom explanation */}
-            <div className="mt-4 text-center">
-              <p className="text-white/80 text-xs leading-relaxed">
-                <span className="font-semibold">Open weights</span> = model architecture and trained parameters publicly available for download and customization
-              </p>
-            </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </>
       );
     }
   }

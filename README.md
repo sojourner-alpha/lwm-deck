@@ -1,90 +1,222 @@
-# Family Office
+# Alpha Decks
 
-A React TypeScript application for family office management.
+A sophisticated React TypeScript presentation system for creating interactive, animated business presentation decks. Built for professional consulting and advisory use cases with rich visualizations and mobile-responsive design.
 
-## Getting Started
+## 🎯 Features
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and TypeScript.
+### Interactive Presentations
+- **Multiple Deck Support**: Switch between different presentation topics
+- **Special Elements**: Interactive charts, persona cards, and data visualizations
+- **Keyboard Navigation**: Navigate with arrow keys for smooth presentation flow
+- **Mobile Responsive**: Optimized layouts for both desktop and mobile viewing
 
-### Prerequisites
+### Advanced UI Components
+- **Animated Transitions**: Smooth slide transitions with Framer Motion
+- **Professional Styling**: Backdrop blur effects, gradients, and modern design
+- **Interactive Elements**: Toggleable content, pop-out charts, and hover effects
+- **Brand Integration**: Professional logo placement and custom styling
 
-- Node.js (version 14 or higher)
-- npm or yarn
+### Content Management
+- **Flexible Slide Structure**: Support for bullets, subtext, headlines, and custom layouts
+- **Image Management**: Organized background images with category-based structure
+- **Extensible Data Model**: Easy to add new decks and slide types
 
-### Installation
+## 🚀 Current Decks
 
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+### 1. Family Office Practice
+**Business Strategy Presentation**
+- Market landscape analysis with interactive growth charts
+- Service offering breakdown
+- Risk assessment and competitive positioning
+- Professional Odgers Berndtson branding
 
-### Available Scripts
+### 2. AI 101 for Financial Professionals
+**Educational Presentation**
+- Interactive AI model comparison table
+- Baseball card-style persona presentations
+- Tool recommendation workflow
+- RACE framework visualization
+- S-curve adoption graphics
 
-In the project directory, you can run:
+## 🛠️ Technology Stack
 
-#### `npm start`
+- **React 18** with TypeScript
+- **Tailwind CSS** with custom animations
+- **Framer Motion** for smooth transitions
+- **Create React App** build system
+- **Mobile-first responsive design**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-#### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-#### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-#### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-## Project Structure
+## 📁 Project Structure
 
 ```
-family-office/
+alpha-decks/
 ├── public/
+│   ├── images/
+│   │   ├── slides/              # Categorized background images
+│   │   │   ├── AWM-logo.png         # AI deck branding
+│   │   │   └── OG-logo.png          # Family Office branding
+│   │   └── [tool-logos]         # AI tool logos
 │   ├── index.html
-│   ├── manifest.json
-│   └── robots.txt
+│   └── manifest.json
 ├── src/
-│   ├── components/          # Reusable components
-│   ├── pages/              # Page components
-│   ├── hooks/              # Custom React hooks
-│   ├── utils/              # Utility functions
-│   ├── types/              # TypeScript type definitions
-│   ├── services/           # API services
-│   ├── App.tsx
-│   ├── App.css
-│   ├── index.tsx
-│   ├── index.css
-│   └── setupTests.ts
+│   ├── components/
+│   │   ├── DeckSelector/        # Deck switching component
+│   │   └── StrategyDeck/        # Main presentation component
+│   │       ├── StrategyDeck.tsx # Core presentation logic
+│   │       └── SpecialElements.tsx # Interactive elements
+│   ├── data/
+│   │   └── decks/               # Deck configurations
+│   │       ├── aiFinance.ts     # AI education deck
+│   │       ├── familyOffice.ts  # Business strategy deck
+│   │       └── index.ts         # Deck registry
+│   ├── types/
+│   │   ├── deck.ts              # Deck and slide interfaces
+│   │   └── index.ts             # Global types
+│   ├── App.tsx                  # Main application
+│   ├── index.tsx                # Entry point
+│   └── index.css                # Global styles
 ├── package.json
+├── tailwind.config.js           # Custom Tailwind configuration
 ├── tsconfig.json
 └── README.md
 ```
 
-## Learn More
+## 🎨 Design Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Mobile Optimization
+- **3:4 Aspect Ratio Cards**: Optimized for mobile viewing
+- **Collapsible Navigation**: Mobile-friendly menu system
+- **Touch-Friendly Controls**: Responsive buttons and interactions
+- **Adaptive Typography**: Scalable text for different screen sizes
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Desktop Experience
+- **Immersive Full-Screen**: Cinematic presentation mode
+- **Side Navigation**: Fixed navigation for quick slide jumping
+- **Keyboard Shortcuts**: Professional presentation controls
+- **Multi-Modal Content**: Charts, tables, and interactive elements
 
-## Contributing
+### Visual Effects
+- **Backdrop Blur**: Modern glass-morphism effects
+- **Custom Animations**: Slide-up, fade-in, and scale transitions
+- **Professional Gradients**: Subtle overlays and accents
+- **Responsive Images**: High-quality backgrounds with fallbacks
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (version 16 or higher)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/sojourner-alpha/decks.git
+   cd decks
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm start
+   ```
+   Open [http://localhost:3000](http://localhost:3000) to view in browser
+
+### Available Scripts
+
+- **`npm start`** - Development server with hot reload
+- **`npm build`** - Production build optimized for deployment
+- **`npm test`** - Run test suite
+- **`npm run eject`** - Eject from Create React App (irreversible)
+
+## 📊 Adding New Decks
+
+1. **Create deck configuration** in `src/data/decks/`
+2. **Add slide images** to `public/images/slides/`
+3. **Register deck** in `src/data/decks/index.ts`
+4. **Add deck metadata** for selector dropdown
+
+### Example Deck Structure
+```typescript
+export const myDeck: DeckConfig = {
+  id: 'my-deck',
+  title: 'My Presentation',
+  subtitle: 'Subtitle Here',
+  author: 'Author Name',
+  description: 'Deck description',
+  slideImages: {
+    title: '/images/slides/my-title.png',
+    // ... category mappings
+  },
+  slides: [
+    {
+      key: 'Title',
+      category: 'title',
+      headlines: ['My Title'],
+      subtitle: 'My Subtitle'
+    },
+    // ... more slides
+  ]
+};
+```
+
+## 🎮 Navigation Controls
+
+### Desktop
+- **Arrow Keys**: Navigate between slides
+- **Click Navigation**: Use side panel for quick jumping
+- **Mouse Wheel**: Scroll through presentation
+
+### Mobile
+- **Touch Gestures**: Swipe to navigate
+- **Menu Button**: Access full slide navigation
+- **Tap Controls**: Interactive elements and buttons
+
+## 🔧 Customization
+
+### Styling
+- Modify `tailwind.config.js` for theme customization
+- Update `src/index.css` for global styles
+- Customize component styles in individual files
+
+### Content
+- Edit deck configurations in `src/data/decks/`
+- Replace images in `public/images/`
+- Modify special elements in `SpecialElements.tsx`
+
+### Features
+- Add new slide categories in `src/types/deck.ts`
+- Extend special elements for custom interactions
+- Integrate additional animation libraries
+
+## 📱 Browser Support
+
+- **Modern browsers** with ES6+ support
+- **Mobile Safari** (iOS 12+)
+- **Chrome Mobile** (Android 8+)
+- **Desktop browsers** (Chrome, Firefox, Safari, Edge)
+
+## 🤝 Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request 
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open Pull Request
+
+## 📄 License
+
+This project is private and proprietary. All rights reserved.
+
+## 🎯 Roadmap
+
+- [ ] Add export to PDF functionality
+- [ ] Implement presenter notes
+- [ ] Add slide transitions customization
+- [ ] Create deck template system
+- [ ] Add collaborative editing features
+- [ ] Implement analytics tracking 
