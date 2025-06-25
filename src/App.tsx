@@ -1,9 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StrategyDeck, DeckSelector } from './components';
 import { getDecksById } from './data/decks';
 
 function App() {
   const [currentDeckId, setCurrentDeckId] = useState<string>('ai-finance');
+  
+  // Handle URL hash-based navigation
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1); // Remove the #
+      if (hash && ['family-office', 'ai-finance', 'ai-finance-2nd', 'lederle-farms'].includes(hash)) {
+        setCurrentDeckId(hash);
+      }
+    };
+
+    // Set initial deck from URL hash
+    handleHashChange();
+    
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  // Update URL when deck changes
+  const handleDeckChange = (deckId: string) => {
+    setCurrentDeckId(deckId);
+    window.location.hash = deckId;
+  };
   
   const currentDeck = getDecksById(currentDeckId);
 
@@ -24,7 +48,7 @@ function App() {
       <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
         <DeckSelector
           currentDeckId={currentDeckId}
-          onDeckChange={setCurrentDeckId}
+          onDeckChange={handleDeckChange}
         />
       </div>
 

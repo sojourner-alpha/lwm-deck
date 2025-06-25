@@ -48,10 +48,10 @@ export const aiFinanceDeck: DeckConfig = {
       category: "strategy",
       title: "What I Do",
       bullets: [
-        "Advisory services on AI research & development in finance and operations.",
-        "Clients span venture portfolios, asset managers, private equity and research labs.",
-        "Founded Sojourn Insight in 2023, partners based in Minneapolis and Seoul.",
-        "Investor, trader, husband, father and free agent."
+        "Advisory services on AI research & development in finance and operations",
+        "Clients span venture portfolios, asset managers, private equity and research labs",
+        "Founded Sojourn Insight in 2023, partners based in Minneapolis and Seoul",
+        "Investor, trader, husband, father and free agent"
       ],
       subtext: [
         "Engineer → Analyst → Operator → Manager → Advisor → Investor",
@@ -63,10 +63,10 @@ export const aiFinanceDeck: DeckConfig = {
       category: "education",
       title: "Why we're Here",
       bullets: [
-        "General overview of AI landscape and applications.",
-        "Awareness → Understanding → Adoption.",
-        "Templates of best practices.",
-        "Free condensed version of a workshop.",
+        "General overview of AI landscape and applications",
+        "Awareness → Understanding → Adoption",
+        "Templates of best practices",
+        "Free condensed version of a workshop"
       ],
       subtext: [
         "Demystify AI and provide actionable next steps.",
@@ -157,17 +157,6 @@ export const aiFinanceDeck: DeckConfig = {
       ]
     },
     {
-      key: "Resources",
-      category: "general",
-      title: "Resources & Next Steps",
-      bullets: [
-        "Reading list (links).",
-        "Follow: Sojourn blog, newsletter.",
-        "Offering: full-day workshop, bespoke integration project.",
-        "Contact info QR."
-      ]
-    },
-    {
       key: "QA",
       category: "general",
       title: "Q&A / Wrap",
@@ -175,6 +164,69 @@ export const aiFinanceDeck: DeckConfig = {
         "Single prompt: \"What's the first workflow you'll automate?\"",
         "Leave 10 min buffer.",
         "Capture questions in shared doc for follow-up."
+      ]
+    }
+  ]
+};
+
+export const aiFinance2ndCallDeck: DeckConfig = {
+  id: 'ai-finance-2nd',
+  title: 'AI Implementation Strategy',
+  subtitle: 'Follow-up Discussion & Next Steps',
+  author: 'Curt Lederle',
+  description: 'Strategic AI implementation roadmap and targeted solutions for Axxcess Wealth Management',
+  
+  slideImages: {
+    title: "/images/slides/boardroom.png",
+    technology: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80",
+    ai: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1600&q=80",
+    finance: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1600&q=80",
+    strategy: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80",
+    general: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80"
+  },
+  
+  slides: [
+    {
+      key: "Title",
+      category: "title",
+      headlines: ["AI Implementation Strategy for Axxcess"],
+      subtitle: "Follow-up Discussion & Next Steps",
+      author: "Curt Lederle",
+      footer: "Strategic roadmap based on initial consultation findings"
+    },
+    {
+      key: "Takeaways",
+      category: "strategy",
+      title: "Pain-Point Synthesis from 1st Call",
+      bullets: [
+        "Compliance bottleneck: Weekly newsletter drafted Monday often clears compliance only by Thursday, killing timeliness and engagement",
+        "Advisor bandwidth: Kevin has ±100 households; even basic position updates don't reach all clients consistently", 
+        "Marketing workflow: Mariah already uses AI copy tools; proven appetite for automated, compliance-ready content",
+        "Research silo: Jeff prefers auditable data sources; would back AI only if raw data lineage stays intact",
+        "Strategic extrapolation: 100-advisor, $6B platform means Kevin pilot could scale advisor productivity firm-wide"
+      ]
+    },
+    {
+      key: "Questions",
+      category: "general", 
+      title: "Strategic Questions & Discovery",
+      bullets: [
+        "Strategic questions for Michael Seid covering platform vision, data architecture, and compliance posture",
+        "Discovery questions for Kevin Manzo focusing on client needs, pain points, and pilot opportunities",
+        "Targeted approach to understand current workflows and identify highest-impact AI implementation areas",
+        "Framework for assessing readiness and resource allocation for AI integration initiatives"
+      ]
+    },
+    {
+      key: "Ideas",
+      category: "technology",
+      title: "Near-Term AI Value-Add Opportunities",
+      bullets: [
+        "Advisor & Client Communications: Auto-draft personalized quarterly letters with compliance integration",
+        "Research Accelerator: LLM pipeline for earnings calls and macro data with branded heat-maps",
+        "Portfolio Intelligence Dashboard: Natural-language queries for risk stats and drift alerts",
+        "Advisor On-Boarding & Training: Chatbot tutor and document-QA for platform procedures",
+        "Operational Efficiencies: Automated Form ADV updates and NLP extraction for private market docs"
       ]
     }
   ]
