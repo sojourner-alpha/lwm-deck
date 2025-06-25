@@ -198,17 +198,33 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
                         /* AI Finance deck - show AWM logo */
                         <>
                           <div className="flex items-center justify-center space-x-4 mb-4">
-                            <div className="bg-white/20 backdrop-blur-md rounded-xl p-3 border border-white/30">
+                            {is2ndCallDeck ? (
+                              /* 2nd Call deck - logo without background */
                               <img 
                                 src="/images/AWM-logo.png" 
                                 alt="AWM Logo" 
                                 className="w-12 h-12 md:w-16 md:h-16 object-contain"
                               />
-                            </div>
+                            ) : (
+                              /* 1st Call deck - logo with background */
+                              <div className="bg-white/20 backdrop-blur-md rounded-xl p-3 border border-white/30">
+                                <img 
+                                  src="/images/AWM-logo.png" 
+                                  alt="AWM Logo" 
+                                  className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                                />
+                              </div>
+                            )}
                           </div>
-                          <p className="text-white/70 text-sm md:text-base font-medium">
-                            {deck.subtitle}
-                          </p>
+                          {is2ndCallDeck ? (
+                            <p className="text-white/70 text-sm md:text-base font-medium">
+                              Prepared for Axxcess Wealth Management
+                            </p>
+                          ) : (
+                            <p className="text-white/70 text-sm md:text-base font-medium">
+                              {deck.subtitle}
+                            </p>
+                          )}
                         </>
                       ) : (
                         /* Other decks - simple icon or title */
@@ -1092,14 +1108,27 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
                       {/* Logo */}
                       <div className="text-center mb-4">
                         <div className="flex items-center justify-center space-x-3 mb-3">
-                          <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-lg flex items-center justify-center border border-white/30">
+                          {is2ndCallDeck ? (
+                            /* 2nd Call deck - logo without background */
                             <img 
                               src="/images/AWM-logo.png" 
                               alt="AWM Logo" 
                               className="w-6 h-6 object-contain"
                             />
-                          </div>
+                          ) : (
+                            /* 1st Call deck - logo with background */
+                            <div className="w-10 h-10 bg-white/20 backdrop-blur-md rounded-lg flex items-center justify-center border border-white/30">
+                              <img 
+                                src="/images/AWM-logo.png" 
+                                alt="AWM Logo" 
+                                className="w-6 h-6 object-contain"
+                              />
+                            </div>
+                          )}
                         </div>
+                        <p className="text-white/70 text-xs font-medium">
+                          {is2ndCallDeck ? 'Prepared for Axxcess Wealth Management' : deck.subtitle}
+                        </p>
                       </div>
                       
                       {/* Title */}
