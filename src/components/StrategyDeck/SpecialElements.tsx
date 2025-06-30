@@ -33,66 +33,778 @@ export const SpecialElements: React.FC<SpecialElementsProps> = ({
   
   // Lederle Farms deck special elements
   if (deckId === 'lederle-farms') {
-    // Market Analysis slide - Hospitality market overview
-    if (slide.key === 'Market Analysis') {
+    // Title slide - Dynamic image collage
+    if (slide.key === 'Title') {
       return (
-        <div className="w-full h-full flex items-center justify-center p-2">
-          <div className="w-full max-w-5xl">
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Dynamic Image Collage */}
+          <div className="absolute inset-0 grid grid-cols-12 grid-rows-8 gap-2 p-4">
+            {/* Phase 1 - Large feature */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="col-span-4 row-span-3 rounded-xl overflow-hidden shadow-2xl border-2 border-white/30"
+            >
+              <img 
+                src="/images/phase1.png" 
+                alt="Phase 1 - Foundation" 
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+
+            {/* Phase 2 - Medium right */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: 3 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="col-span-3 row-span-2 col-start-9 row-start-1 rounded-lg overflow-hidden shadow-xl border border-white/20"
+            >
+              <img 
+                src="/images/phase2.png" 
+                alt="Phase 2 - Expansion" 
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+
+            {/* Phase 3 - Medium center-right */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: -2 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 1, delay: 0.6 }}
+              className="col-span-3 row-span-2 col-start-6 row-start-3 rounded-lg overflow-hidden shadow-xl border border-white/20"
+            >
+              <img 
+                src="/images/phase3.png" 
+                alt="Phase 3 - Premium" 
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+
+            {/* Phase 4 - Small bottom left */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: 4 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="col-span-2 row-span-2 col-start-2 row-start-6 rounded-lg overflow-hidden shadow-lg border border-white/20"
+            >
+              <img 
+                src="/images/phase4.png" 
+                alt="Phase 4 - Energy" 
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+
+            {/* Phase 5 - Small bottom right */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: -3 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 1, delay: 1.0 }}
+              className="col-span-2 row-span-2 col-start-10 row-start-6 rounded-lg overflow-hidden shadow-lg border border-white/20"
+            >
+              <img 
+                src="/images/phase5.png" 
+                alt="Phase 5 - Technology" 
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+
+            {/* Floating development phases labels */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              className="col-span-6 row-span-2 col-start-4 row-start-7 flex items-center justify-center"
+            >
+              <div className="bg-black/60 backdrop-blur-md rounded-xl border border-white/30 p-4 text-center">
+                <p className="text-white/90 text-sm font-medium">
+                  Five-Phase Development Strategy
+                </p>
+                <p className="text-white/70 text-xs mt-1">
+                  Foundation → Expansion → Premium → Energy → Technology
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Overlay gradient for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40 pointer-events-none"></div>
+        </div>
+      );
+    }
+
+    // Phase 1 slide - Enhanced with image and improved layout
+    if (slide.key === 'Phase 1') {
+      return (
+        <div className="w-full h-full flex items-center justify-center p-6">
+          <div className="w-full max-w-6xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white/15 backdrop-blur-md rounded-xl border border-white/30 p-3 shadow-xl"
+              className="bg-white/15 backdrop-blur-md rounded-xl border border-white/30 p-4 shadow-xl flex overflow-hidden"
             >
-              <h3 className="text-white font-bold text-sm mb-3 tracking-wide text-center">
-                HOSPITALITY MARKET ANALYSIS
-              </h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                {/* Market Size */}
-                <div className="bg-black/30 rounded-lg p-3 border border-white/20">
+              {/* Left Side - Image */}
+              <div className="w-2/5 pr-4 flex-shrink-0 flex items-center justify-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  className="rounded-lg overflow-hidden border border-white/20 shadow-xl"
+                  style={{ aspectRatio: '3/4', maxHeight: '52.5vh' }}
+                >
+                  <img 
+                    src="/images/phase1.png" 
+                    alt="Phase 1 - Foundation & Quick Wins" 
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              </div>
+
+              {/* Right Side - Content */}
+              <div className="w-3/5 flex flex-col justify-center">
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                  className="space-y-4"
+                >
+                  {/* Phase Header */}
                   <div className="text-center">
-                    <div className="w-8 h-8 bg-blue-500/80 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <span className="text-white font-bold text-sm">📊</span>
+                    <div className="flex items-center justify-center mb-3">
+                      <div className="w-10 h-10 bg-blue-500/80 rounded-full flex items-center justify-center mr-3">
+                        <span className="text-white font-bold text-lg">1</span>
+                      </div>
+                      <div>
+                        <h3 className="text-white font-bold text-xl">Phase 1</h3>
+                        <p className="text-white/80 text-base">Foundation & Quick Wins</p>
+                      </div>
                     </div>
-                    <h4 className="text-white font-bold text-xs mb-2">Market Size</h4>
-                    <div className="text-white/80 text-xs space-y-1">
-                      <p>Short-term rental: $87B globally</p>
-                      <p>Rural/glamping: 15% CAGR</p>
-                      <p>Avg nightly: $150-400</p>
+                    
+                    {/* Key Metrics */}
+                    <div className="grid grid-cols-3 gap-3 mb-4">
+                      <div className="bg-black/30 rounded-lg p-2 text-center border border-white/20">
+                        <p className="text-green-400 font-bold text-base">$250K</p>
+                        <p className="text-white/70 text-xs">Investment</p>
+                      </div>
+                      <div className="bg-black/30 rounded-lg p-2 text-center border border-white/20">
+                        <p className="text-blue-400 font-bold text-base">6-9 months</p>
+                        <p className="text-white/70 text-xs">Timeline</p>
+                      </div>
+                      <div className="bg-black/30 rounded-lg p-2 text-center border border-white/20">
+                        <p className="text-purple-400 font-bold text-base">$2K-4K</p>
+                        <p className="text-white/70 text-xs">Monthly Revenue</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Key Activities */}
+                  <div className="space-y-3">
+                    {[
+                      { icon: '🏞️', title: 'Land Acquisition', desc: 'Strategic site selection with development potential' },
+                      { icon: '🚐', title: 'Airstream Deployment', desc: 'Premium short-term rental for immediate revenue' },
+                      { icon: '🏗️', title: 'Infrastructure Development', desc: 'Essential utilities and access roads' },
+                      { icon: '📋', title: 'Permitting & Planning', desc: 'Secure approvals for subsequent phases' }
+                    ].map((item, idx) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.9 + idx * 0.1 }}
+                        className="flex items-start space-x-3 bg-black/20 rounded-lg p-3 border border-white/10"
+                      >
+                        <div className="text-xl flex-shrink-0">{item.icon}</div>
+                        <div className="min-w-0">
+                          <h4 className="text-white font-semibold text-base">{item.title}</h4>
+                          <p className="text-white/70 text-sm">{item.desc}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      );
+    }
+
+    // Phase 2 slide - Enhanced with image and improved layout
+    if (slide.key === 'Phase 2') {
+      return (
+        <div className="w-full h-full flex items-center justify-center p-6">
+          <div className="w-full max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white/15 backdrop-blur-md rounded-xl border border-white/30 p-4 shadow-xl flex overflow-hidden"
+            >
+              {/* Left Side - Content */}
+              <div className="w-3/5 flex flex-col justify-center pr-4">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                  className="space-y-4"
+                >
+                  {/* Phase Header */}
+                  <div className="text-center">
+                    <div className="flex items-center justify-center mb-3">
+                      <div className="w-10 h-10 bg-green-500/80 rounded-full flex items-center justify-center mr-3">
+                        <span className="text-white font-bold text-lg">2</span>
+                      </div>
+                      <div>
+                        <h3 className="text-white font-bold text-xl">Phase 2</h3>
+                        <p className="text-white/80 text-base">Hospitality Expansion</p>
+                      </div>
+                    </div>
+                    
+                    {/* Key Metrics */}
+                    <div className="grid grid-cols-3 gap-3 mb-4">
+                      <div className="bg-black/30 rounded-lg p-2 text-center border border-white/20">
+                        <p className="text-green-400 font-bold text-base">$350K</p>
+                        <p className="text-white/70 text-xs">Investment</p>
+                      </div>
+                      <div className="bg-black/30 rounded-lg p-2 text-center border border-white/20">
+                        <p className="text-blue-400 font-bold text-base">12 months</p>
+                        <p className="text-white/70 text-xs">Timeline</p>
+                      </div>
+                      <div className="bg-black/30 rounded-lg p-2 text-center border border-white/20">
+                        <p className="text-purple-400 font-bold text-base">$8K-15K</p>
+                        <p className="text-white/70 text-xs">Monthly Revenue</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Key Activities */}
+                  <div className="space-y-3">
+                    {[
+                      { icon: '🛁', title: 'Bathhouse & Spa', desc: 'Shared amenity facility enhancing guest experience' },
+                      { icon: '🏗️', title: 'Foundation Preparation', desc: 'Three engineered foundations with full utilities' },
+                      { icon: '⛺', title: 'Yurt Deployment', desc: 'Three luxury yurt accommodations (4x capacity)' },
+                      { icon: '🌿', title: 'Landscape Enhancement', desc: 'Curated outdoor spaces and recreational areas' }
+                    ].map((item, idx) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.9 + idx * 0.1 }}
+                        className="flex items-start space-x-3 bg-black/20 rounded-lg p-3 border border-white/10"
+                      >
+                        <div className="text-xl flex-shrink-0">{item.icon}</div>
+                        <div className="min-w-0">
+                          <h4 className="text-white font-semibold text-base">{item.title}</h4>
+                          <p className="text-white/70 text-sm">{item.desc}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Right Side - Image */}
+              <div className="w-2/5 flex-shrink-0 flex items-center justify-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  className="rounded-lg overflow-hidden border border-white/20 shadow-xl"
+                  style={{ aspectRatio: '3/4', maxHeight: '52.5vh' }}
+                >
+                  <img 
+                    src="/images/phase2.png" 
+                    alt="Phase 2 - Hospitality Expansion" 
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      );
+    }
+
+    // Phase 3 slide - Enhanced with image and improved layout
+    if (slide.key === 'Phase 3') {
+      return (
+        <div className="w-full h-full flex items-center justify-center p-6">
+          <div className="w-full max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white/15 backdrop-blur-md rounded-xl border border-white/30 p-4 shadow-xl flex overflow-hidden"
+            >
+              {/* Left Side - Image */}
+              <div className="w-2/5 pr-4 flex-shrink-0 flex items-center justify-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  className="rounded-lg overflow-hidden border border-white/20 shadow-xl"
+                  style={{ aspectRatio: '3/4', maxHeight: '52.5vh' }}
+                >
+                  <img 
+                    src="/images/phase3.png" 
+                    alt="Phase 3 - Premium Development" 
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              </div>
+
+              {/* Right Side - Content */}
+              <div className="w-3/5 flex flex-col justify-center">
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                  className="space-y-4"
+                >
+                  {/* Phase Header */}
+                  <div className="text-center">
+                    <div className="flex items-center justify-center mb-3">
+                      <div className="w-10 h-10 bg-purple-500/80 rounded-full flex items-center justify-center mr-3">
+                        <span className="text-white font-bold text-lg">3</span>
+                      </div>
+                      <div>
+                        <h3 className="text-white font-bold text-xl">Phase 3</h3>
+                        <p className="text-white/80 text-base">Premium Development</p>
+                      </div>
+                    </div>
+                    
+                    {/* Key Metrics */}
+                    <div className="grid grid-cols-3 gap-3 mb-4">
+                      <div className="bg-black/30 rounded-lg p-2 text-center border border-white/20">
+                        <p className="text-green-400 font-bold text-base">$700K</p>
+                        <p className="text-white/70 text-xs">Investment</p>
+                      </div>
+                      <div className="bg-black/30 rounded-lg p-2 text-center border border-white/20">
+                        <p className="text-blue-400 font-bold text-base">18 months</p>
+                        <p className="text-white/70 text-xs">Timeline</p>
+                      </div>
+                      <div className="bg-black/30 rounded-lg p-2 text-center border border-white/20">
+                        <p className="text-purple-400 font-bold text-base">$20K-35K</p>
+                        <p className="text-white/70 text-xs">Monthly Revenue</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Key Activities */}
+                  <div className="space-y-3">
+                    {[
+                      { icon: '🏘️', title: 'Cabin Construction', desc: 'Three custom tiny house cabins on foundations' },
+                      { icon: '🏛️', title: 'Central Lodge', desc: 'Main gathering space with commercial kitchen' },
+                      { icon: '🏊', title: 'Premium Amenities', desc: 'Pool, expanded spa, and recreational infrastructure' },
+                      { icon: '🌺', title: 'Landscape Maturation', desc: 'Full buildout of gardens and trail systems' }
+                    ].map((item, idx) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.9 + idx * 0.1 }}
+                        className="flex items-start space-x-3 bg-black/20 rounded-lg p-3 border border-white/10"
+                      >
+                        <div className="text-xl flex-shrink-0">{item.icon}</div>
+                        <div className="min-w-0">
+                          <h4 className="text-white font-semibold text-base">{item.title}</h4>
+                          <p className="text-white/70 text-sm">{item.desc}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      );
+    }
+
+    // Phase 4 slide - Enhanced with image and improved layout
+    if (slide.key === 'Phase 4') {
+      return (
+        <div className="w-full h-full flex items-center justify-center p-6">
+          <div className="w-full max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white/15 backdrop-blur-md rounded-xl border border-white/30 p-4 shadow-xl flex overflow-hidden"
+            >
+              {/* Left Side - Content */}
+              <div className="w-3/5 flex flex-col justify-center pr-4">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                  className="space-y-4"
+                >
+                  {/* Phase Header */}
+                  <div className="text-center">
+                    <div className="flex items-center justify-center mb-3">
+                      <div className="w-10 h-10 bg-amber-500/80 rounded-full flex items-center justify-center mr-3">
+                        <span className="text-white font-bold text-lg">4</span>
+                      </div>
+                      <div>
+                        <h3 className="text-white font-bold text-xl">Phase 4</h3>
+                        <p className="text-white/80 text-base">Energy Infrastructure</p>
+                      </div>
+                    </div>
+                    
+                    {/* Key Metrics */}
+                    <div className="grid grid-cols-3 gap-3 mb-4">
+                      <div className="bg-black/30 rounded-lg p-2 text-center border border-white/20">
+                        <p className="text-green-400 font-bold text-base">$1.5M</p>
+                        <p className="text-white/70 text-xs">Investment</p>
+                      </div>
+                      <div className="bg-black/30 rounded-lg p-2 text-center border border-white/20">
+                        <p className="text-blue-400 font-bold text-base">12 months</p>
+                        <p className="text-white/70 text-xs">Timeline</p>
+                      </div>
+                      <div className="bg-black/30 rounded-lg p-2 text-center border border-white/20">
+                        <p className="text-purple-400 font-bold text-base">$15K-25K</p>
+                        <p className="text-white/70 text-xs">Monthly Revenue</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Key Activities */}
+                  <div className="space-y-3">
+                    {[
+                      { icon: '☀️', title: 'Solar Farm Development', desc: '1-2MW solar installation for energy independence' },
+                      { icon: '🔌', title: 'Grid Integration', desc: 'Net metering and power purchase agreements' },
+                      { icon: '🔋', title: 'Energy Storage', desc: 'Battery systems for load balancing and backup' },
+                      { icon: '🧠', title: 'Smart Grid Integration', desc: 'Advanced monitoring and optimization systems' }
+                    ].map((item, idx) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.9 + idx * 0.1 }}
+                        className="flex items-start space-x-3 bg-black/20 rounded-lg p-3 border border-white/10"
+                      >
+                        <div className="text-xl flex-shrink-0">{item.icon}</div>
+                        <div className="min-w-0">
+                          <h4 className="text-white font-semibold text-base">{item.title}</h4>
+                          <p className="text-white/70 text-sm">{item.desc}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Right Side - Image */}
+              <div className="w-2/5 flex-shrink-0 flex items-center justify-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  className="rounded-lg overflow-hidden border border-white/20 shadow-xl"
+                  style={{ aspectRatio: '3/4', maxHeight: '52.5vh' }}
+                >
+                  <img 
+                    src="/images/phase4.png" 
+                    alt="Phase 4 - Energy Infrastructure" 
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      );
+    }
+
+    // Phase 5 slide - Enhanced with image and improved layout
+    if (slide.key === 'Phase 5') {
+      return (
+        <div className="w-full h-full flex items-center justify-center p-6">
+          <div className="w-full max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white/15 backdrop-blur-md rounded-xl border border-white/30 p-4 shadow-xl flex overflow-hidden"
+            >
+              {/* Left Side - Image */}
+              <div className="w-2/5 pr-4 flex-shrink-0 flex items-center justify-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  className="rounded-lg overflow-hidden border border-white/20 shadow-xl"
+                  style={{ aspectRatio: '3/4', maxHeight: '52.5vh' }}
+                >
+                  <img 
+                    src="/images/phase5.png" 
+                    alt="Phase 5 - Technology Innovation" 
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              </div>
+
+              {/* Right Side - Content */}
+              <div className="w-3/5 flex flex-col justify-center">
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                  className="space-y-4"
+                >
+                  {/* Phase Header */}
+                  <div className="text-center">
+                    <div className="flex items-center justify-center mb-3">
+                      <div className="w-10 h-10 bg-red-500/80 rounded-full flex items-center justify-center mr-3">
+                        <span className="text-white font-bold text-lg">5</span>
+                      </div>
+                      <div>
+                        <h3 className="text-white font-bold text-xl">Phase 5</h3>
+                        <p className="text-white/80 text-base">Technology Innovation</p>
+                      </div>
+                    </div>
+                    
+                    {/* Key Metrics */}
+                    <div className="grid grid-cols-3 gap-3 mb-4">
+                      <div className="bg-black/30 rounded-lg p-2 text-center border border-white/20">
+                        <p className="text-green-400 font-bold text-base">$500K-1M</p>
+                        <p className="text-white/70 text-xs">Investment</p>
+                      </div>
+                      <div className="bg-black/30 rounded-lg p-2 text-center border border-white/20">
+                        <p className="text-blue-400 font-bold text-base">12-24 months</p>
+                        <p className="text-white/70 text-xs">Timeline</p>
+                      </div>
+                      <div className="bg-black/30 rounded-lg p-2 text-center border border-white/20">
+                        <p className="text-purple-400 font-bold text-base">$10K-20K</p>
+                        <p className="text-white/70 text-xs">Monthly Revenue</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Key Activities */}
+                  <div className="space-y-3">
+                    {[
+                      { icon: '💻', title: 'Micro Data Center', desc: 'Edge computing facility leveraging renewable energy' },
+                      { icon: '🔬', title: 'Proof of Concept', desc: 'Demonstrate viability of distributed computing' },
+                      { icon: '🤝', title: 'Strategic Partnerships', desc: 'Collaborate with cloud and edge computing companies' },
+                      { icon: '🤖', title: 'AI Integration', desc: 'AI-powered property management and optimization' }
+                    ].map((item, idx) => (
+                      <motion.div
+                        key={idx}
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.9 + idx * 0.1 }}
+                        className="flex items-start space-x-3 bg-black/20 rounded-lg p-3 border border-white/10"
+                      >
+                        <div className="text-xl flex-shrink-0">{item.icon}</div>
+                        <div className="min-w-0">
+                          <h4 className="text-white font-semibold text-base">{item.title}</h4>
+                          <p className="text-white/70 text-sm">{item.desc}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      );
+    }
+
+    // Market Analysis slide - Comprehensive hospitality market overview
+    if (slide.key === 'Market Analysis') {
+      return (
+        <div className="w-full h-full flex items-center justify-center p-2">
+          <div className="w-full max-w-6xl h-full">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white/15 backdrop-blur-md rounded-xl border border-white/30 p-4 shadow-xl h-full flex flex-col"
+            >
+              {/* Main Grid Layout - Fixed heights and better spacing */}
+              <div className="grid grid-cols-12 gap-4 flex-1 min-h-0">
+                
+                {/* Left Column - Market Size & Growth */}
+                <div className="col-span-4 flex flex-col space-y-3 h-full">
+                  {/* Market Size Hero */}
+                  <div className="bg-black/40 rounded-lg p-4 border border-white/20 h-32 flex-shrink-0">
+                    <div className="text-center h-full flex flex-col justify-center">
+                      <div className="w-12 h-12 bg-blue-500/80 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <span className="text-white font-bold text-xl">📊</span>
+                      </div>
+                      <h4 className="text-white font-bold text-base mb-1">$87B Global Market</h4>
+                      <p className="text-white/80 text-sm">Short-term rental industry</p>
+                      <p className="text-green-400 text-sm font-bold">+15% CAGR</p>
+                    </div>
+                  </div>
+
+                  {/* Rural/Glamping Segment */}
+                  <div className="bg-black/40 rounded-lg p-4 border border-white/20 h-28 flex-shrink-0">
+                    <div className="text-center h-full flex flex-col justify-center">
+                      <h4 className="text-white font-bold text-base mb-1">Rural Hospitality</h4>
+                      <p className="text-white/80 text-sm">Fastest growing segment</p>
+                      <p className="text-amber-400 text-sm font-bold">25% CAGR</p>
+                      <p className="text-white/70 text-xs">Glamping & unique stays</p>
+                    </div>
+                  </div>
+
+                  {/* Revenue Potential */}
+                  <div className="bg-black/40 rounded-lg p-4 border border-white/20 flex-1 min-h-0">
+                    <div className="text-center h-full flex flex-col justify-center">
+                      <h4 className="text-white font-bold text-base mb-2">Revenue Potential</h4>
+                      <div className="space-y-1 text-sm">
+                        <p className="text-white/80">Avg nightly: <span className="text-green-400 font-bold">$200-450</span></p>
+                        <p className="text-white/80">Peak occupancy: <span className="text-green-400 font-bold">85%</span></p>
+                        <p className="text-white/80">Annual RevPAR: <span className="text-green-400 font-bold">$45K+</span></p>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Demand Drivers */}
-                <div className="bg-black/30 rounded-lg p-3 border border-white/20">
-                  <div className="text-center">
-                    <div className="w-8 h-8 bg-green-500/80 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <span className="text-white font-bold text-sm">📈</span>
+                {/* Center Column - Target Demographics & Demand Drivers */}
+                <div className="col-span-4 flex flex-col space-y-3 h-full">
+                  {/* Target Demographics */}
+                  <div className="bg-black/40 rounded-lg p-3 border border-white/20 h-52 flex-shrink-0">
+                    <div className="text-center mb-2">
+                      <div className="w-10 h-10 bg-green-500/80 rounded-full flex items-center justify-center mx-auto mb-1">
+                        <span className="text-white font-bold text-lg">👥</span>
+                      </div>
+                      <h4 className="text-white font-bold text-sm">Target Demographics</h4>
                     </div>
-                    <h4 className="text-white font-bold text-xs mb-2">Demand Drivers</h4>
-                    <div className="text-white/80 text-xs space-y-1">
-                      <p>Experience-focused travel</p>
-                      <p>Remote work flexibility</p>
-                      <p>Sustainable tourism</p>
+                    <div className="space-y-2 text-xs px-3">
+                      <div className="flex justify-between">
+                        <span className="text-white/80">Millennials (25-40)</span>
+                        <span className="text-green-400 font-bold">45%</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-white/80">Gen X (40-55)</span>
+                        <span className="text-green-400 font-bold">35%</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-white/80">HHI $75K+</span>
+                        <span className="text-green-400 font-bold">78%</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-white/80">Remote workers</span>
+                        <span className="text-green-400 font-bold">62%</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Demand Drivers */}
+                  <div className="bg-black/40 rounded-lg p-3 border border-white/20 flex-1 min-h-0">
+                    <div className="text-center mb-3">
+                      <h4 className="text-white font-bold text-sm">Key Demand Drivers</h4>
+                    </div>
+                    <div className="space-y-3 text-sm pl-2">
+                      <div className="flex items-center space-x-3">
+                        <span className="text-blue-400">🌱</span>
+                        <span className="text-white/80">Sustainable tourism growth</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <span className="text-green-400">💻</span>
+                        <span className="text-white/80">Remote work flexibility</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <span className="text-purple-400">✨</span>
+                        <span className="text-white/80">Experience-focused travel</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <span className="text-amber-400">🏞️</span>
+                        <span className="text-white/80">Nature-based wellness</span>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Competitive Advantage */}
-                <div className="bg-black/30 rounded-lg p-3 border border-white/20">
-                  <div className="text-center">
-                    <div className="w-8 h-8 bg-purple-500/80 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <span className="text-white font-bold text-sm">🎯</span>
+                {/* Right Column - Competitive Landscape & Location Advantage */}
+                <div className="col-span-4 flex flex-col space-y-3 h-full">
+                  {/* Competitive Landscape */}
+                  <div className="bg-black/40 rounded-lg p-3 border border-white/20 h-52 flex-shrink-0">
+                    <div className="text-center mb-2">
+                      <div className="w-10 h-10 bg-purple-500/80 rounded-full flex items-center justify-center mx-auto mb-1">
+                        <span className="text-white font-bold text-lg">🎯</span>
+                      </div>
+                      <h4 className="text-white font-bold text-sm">Competitive Position</h4>
                     </div>
-                    <h4 className="text-white font-bold text-xs mb-2">Our Edge</h4>
-                    <div className="text-white/80 text-xs space-y-1">
-                      <p>Integrated energy/tech</p>
-                      <p>Phased risk mitigation</p>
-                      <p>Multiple revenue streams</p>
+                    <div className="space-y-2 text-xs">
+                      <div className="bg-white/10 rounded p-2">
+                        <p className="text-white/80 font-medium text-xs">Direct Competitors:</p>
+                        <p className="text-white/70 text-xs">Limited luxury rural options within 100mi</p>
+                      </div>
+                      <div className="bg-white/10 rounded p-2">
+                        <p className="text-white/80 font-medium text-xs">Our Differentiators:</p>
+                        <p className="text-white/70 text-xs">Integrated energy + tech + hospitality</p>
+                      </div>
                     </div>
                   </div>
+
+                  {/* Location Advantage */}
+                  <div className="bg-black/40 rounded-lg p-3 border border-white/20 flex-1 min-h-0">
+                    <div className="text-center mb-3">
+                      <h4 className="text-white font-bold text-sm">Location Advantage</h4>
+                    </div>
+                    <div className="space-y-2 text-sm pl-6">
+                      <div className="flex items-center space-x-3">
+                        <span className="text-blue-400">🏙️</span>
+                        <span className="text-white/80">2hr from major metro</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <span className="text-green-400">🛣️</span>
+                        <span className="text-white/80">Highway accessibility</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <span className="text-purple-400">🌲</span>
+                        <span className="text-white/80">Natural amenities</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <span className="text-amber-400">⚡</span>
+                        <span className="text-white/80">Grid connectivity</span>
+                      </div>
+                      <div className="flex items-center space-x-3">
+                        <span className="text-red-400">🏛️</span>
+                        <span className="text-white/80">Favorable zoning</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Summary Bar - Fixed at bottom */}
+              <div className="mt-3 bg-black/50 rounded-lg p-3 border border-white/20 flex-shrink-0">
+                <div className="text-center">
+                  <p className="text-white font-bold text-sm mb-1">Market Opportunity Summary</p>
+                  <p className="text-white/80 text-xs leading-relaxed">
+                    <span className="text-green-400 font-bold">$87B global market</span> with 
+                    <span className="text-blue-400 font-bold"> 25% rural growth</span> • 
+                    <span className="text-purple-400 font-bold"> Limited local competition</span> • 
+                    <span className="text-amber-400 font-bold"> Unique integrated model</span> • 
+                    <span className="text-red-400 font-bold"> Strong location fundamentals</span>
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -105,58 +817,127 @@ export const SpecialElements: React.FC<SpecialElementsProps> = ({
     if (slide.key === 'Development Plan') {
       return (
         <div className="w-full h-full flex items-center justify-center p-2">
-          <div className="w-full max-w-5xl">
+          <div className="w-full max-w-6xl h-full">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white/15 backdrop-blur-md rounded-xl border border-white/30 p-3 shadow-xl"
+              className="bg-white/15 backdrop-blur-md rounded-xl border border-white/30 p-4 shadow-xl h-full flex flex-col"
             >
-              <h3 className="text-white font-bold text-sm mb-3 tracking-wide text-center">
+              <h3 className="text-white font-bold text-xl mb-4 tracking-wide text-center">
                 DEVELOPMENT ROADMAP
               </h3>
               
-              {/* Timeline visualization */}
-              <div className="relative">
-                {/* Timeline line */}
-                <div className="absolute top-6 left-0 right-0 h-0.5 bg-white/30"></div>
-                
-                <div className="grid grid-cols-5 gap-1">
-                  {[
-                    { phase: 'Phase 1', title: 'Foundation', icon: '��️', investment: '$250K', timeline: '6-9mo', color: 'bg-blue-500/80' },
-                    { phase: 'Phase 2', title: 'Expansion', icon: '🏕️', investment: '$350K', timeline: '12mo', color: 'bg-green-500/80' },
-                    { phase: 'Phase 3', title: 'Premium', icon: '🏘️', investment: '$700K', timeline: '18mo', color: 'bg-purple-500/80' },
-                    { phase: 'Phase 4', title: 'Energy', icon: '☀️', investment: '$1.5M', timeline: '12mo', color: 'bg-amber-500/80' },
-                    { phase: 'Phase 5', title: 'Tech', icon: '💻', investment: '$500K-1M', timeline: '12-24mo', color: 'bg-red-500/80' }
-                  ].map((phase, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
-                      className="text-center"
-                    >
-                      {/* Phase marker */}
-                      <div className={`w-6 h-6 ${phase.color} rounded-full flex items-center justify-center mx-auto mb-1 border-2 border-white/50 relative z-10`}>
-                        <span className="text-white text-sm">{phase.icon}</span>
+              {/* Phase Cards Grid */}
+              <div className="grid grid-cols-5 gap-3 flex-1">
+                {[
+                  { 
+                    phase: 'Phase 1', 
+                    title: 'Foundation & Quick Wins', 
+                    investment: '$250K', 
+                    timeline: '6-9 months', 
+                    color: 'bg-blue-500/80',
+                    imagePlaceholder: 'phase1.png'
+                  },
+                  { 
+                    phase: 'Phase 2', 
+                    title: 'Hospitality Expansion', 
+                    investment: '$350K', 
+                    timeline: '12 months', 
+                    color: 'bg-green-500/80',
+                    imagePlaceholder: 'phase2.png'
+                  },
+                  { 
+                    phase: 'Phase 3', 
+                    title: 'Premium Development', 
+                    investment: '$700K', 
+                    timeline: '18 months', 
+                    color: 'bg-purple-500/80',
+                    imagePlaceholder: 'phase3.png'
+                  },
+                  { 
+                    phase: 'Phase 4', 
+                    title: 'Energy Infrastructure', 
+                    investment: '$1.5M', 
+                    timeline: '12 months', 
+                    color: 'bg-amber-500/80',
+                    imagePlaceholder: 'phase4.png'
+                  },
+                  { 
+                    phase: 'Phase 5', 
+                    title: 'Technology Innovation', 
+                    investment: '$500K-1M', 
+                    timeline: '12-24 months', 
+                    color: 'bg-red-500/80',
+                    imagePlaceholder: 'phase5.png'
+                  }
+                ].map((phase, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
+                    className="flex flex-col h-full"
+                  >
+                    {/* Image Container - 3:4 Ratio */}
+                    <div className="aspect-[3/4] bg-black/40 rounded-lg border border-white/20 mb-3 overflow-hidden relative">
+                      <img 
+                        src={`/images/${phase.imagePlaceholder}`}
+                        alt={`${phase.phase} - ${phase.title}`}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          // Fallback to placeholder if image doesn't exist
+                          const img = e.currentTarget;
+                          img.style.display = 'none';
+                          const fallback = img.parentElement?.querySelector('.fallback-placeholder') as HTMLElement;
+                          if (fallback) {
+                            fallback.style.display = 'flex';
+                          }
+                        }}
+                      />
+                      <div className="fallback-placeholder absolute inset-0 flex items-center justify-center" style={{ display: 'none' }}>
+                        <div className="text-center">
+                          <div className={`w-8 h-8 ${phase.color} rounded-full flex items-center justify-center mx-auto mb-2`}>
+                            <span className="text-white font-bold text-sm">{idx + 1}</span>
+                          </div>
+                          <p className="text-white/60 text-xs">
+                            {phase.imagePlaceholder}
+                          </p>
+                        </div>
                       </div>
-                      
-                      {/* Phase info */}
-                      <div className="bg-black/40 rounded-lg p-1.5 border border-white/20">
-                        <div className="text-white font-bold text-xs mb-0.5">{phase.phase}</div>
-                        <div className="text-white/80 text-xs mb-0.5">{phase.title}</div>
-                        <div className="text-white/60 text-xs">{phase.investment}</div>
-                        <div className="text-white/60 text-xs">{phase.timeline}</div>
+                    </div>
+                    
+                    {/* Phase Info Card */}
+                    <div className="bg-black/40 rounded-lg p-4 border border-white/20 flex-1">
+                      <div className="text-center">
+                        <div className="text-white font-bold text-base mb-2">{phase.phase}</div>
+                        <div className="text-white/80 text-sm mb-3 leading-tight">{phase.title}</div>
+                        <div className="space-y-1">
+                          <div className="text-green-400 font-bold text-sm">{phase.investment}</div>
+                          <div className="text-white/60 text-sm">{phase.timeline}</div>
+                        </div>
                       </div>
-                    </motion.div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+              
+              {/* Timeline Connection Line */}
+              <div className="relative mt-4">
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-white/30"></div>
+                <div className="grid grid-cols-5 gap-3">
+                  {[...Array(5)].map((_, idx) => (
+                    <div key={idx} className="flex justify-center">
+                      <div className="w-3 h-3 bg-white/50 rounded-full relative -top-1"></div>
+                    </div>
                   ))}
                 </div>
               </div>
               
               <div className="mt-3 text-center">
-                <p className="text-white/60 text-xs">Total Investment: $3.3M-3.8M | Timeline: 6-8 years</p>
+                <p className="text-white/60 text-base">Total Investment: $3.3M-3.8M | Timeline: 6-8 years</p>
               </div>
             </motion.div>
           </div>
@@ -503,7 +1284,7 @@ export const SpecialElements: React.FC<SpecialElementsProps> = ({
                         title: 'Strategic Extrapolation',
                         icon: '📈',
                         color: 'bg-green-500/80',
-                        description: '100-advisor, $6B platform means Kevin pilot could scale 5× in advisor productivity firm-wide'
+                        description: 'x100-advisors, $6B platform means Kevin pilot could scale advisor productivity firm-wide'
                       }
                     ].map((item, idx) => (
                       <motion.div
@@ -555,7 +1336,7 @@ export const SpecialElements: React.FC<SpecialElementsProps> = ({
           { category: 'Data Architecture', question: 'What client-level and market data sets are currently unified across advisors—and where are the biggest gaps?' },
           { category: 'Compliance Posture', question: 'Which portions of marketing-review and trade-surveillance workflows are most manual today?' },
           { category: 'Resource Mandate', question: 'If we piloted an AI reporting engine for Kevin\'s book, what internal dev/support resources could you commit?' },
-          { category: 'Commercial Structure', question: 'Would you prefer an internal hire leading a center-of-excellence or a scoped consulting engagement?' },
+          { category: 'Commercial Structure', question: 'Would you be open to an internal hire leading a center-of-excellence on AI deployment and use?' },
           { category: 'Success Metrics', question: 'Which KPIs—advisor productivity, client acquisition cost, NPS, basis-point fee retention—matter most for an AI rollout?' }
         ];
 

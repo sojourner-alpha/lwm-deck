@@ -8,7 +8,7 @@ export const lederleFarmsDeck: DeckConfig = {
   description: 'Comprehensive business proposal and financial model for a phased real estate development project combining short-term rentals, hospitality, and sustainable technology',
   
   slideImages: {
-    title: "/images/phase1.png",
+    title: "/images/farmbackground.png",
   },
   
   slides: [
@@ -29,7 +29,7 @@ export const lederleFarmsDeck: DeckConfig = {
         "Strategic land acquisition with immediate revenue generation through short-term rentals",
         "Phased approach minimizing risk while building sustainable cash flows",
         "Integration of renewable energy and emerging technology for long-term value creation",
-        "Target IRR of 25%+ with diversified revenue streams across hospitality and energy sectors"
+        "Target IRR of 20%+ with diversified revenue streams across hospitality and energy sectors"
       ]
     },
     {
