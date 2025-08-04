@@ -1,7 +1,7 @@
 export interface Slide {
   key: string;
   category: keyof typeof slideImageCategories;
-  template?: 'title' | 'critique' | 'research';
+  template?: 'title' | 'critique' | 'research' | 'premium';
   header?: string;
   headlines?: string[];
   subtitle?: string;
@@ -17,6 +17,11 @@ export interface Slide {
     gaps?: string[];
   };
   researchSteps?: string[];
+  premiumRecommendations?: {
+    category: string;
+    media: string[];
+    drugDev: string[];
+  }[];
 }
 
 export interface DeckConfig {

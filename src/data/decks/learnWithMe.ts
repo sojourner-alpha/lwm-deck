@@ -140,15 +140,30 @@ export const learnWithMeDeck: DeckConfig = {
     {
       key: "Premium",
       category: "strategy",
-      template: "research",
+      template: "premium",
       title: "Premium Value-Add Opportunities",
-      subtitle: "Universal Improvement Categories",
-      researchSteps: [
-        "[Premium recommendation category 1]",
-        "[Premium recommendation category 2]",
-        "[Premium recommendation category 3]",
-        "[Premium recommendation category 4]",
-        "[Premium recommendation category 5]"
+      subtitle: "Universal Improvement Categories with Applications",
+      premiumRecommendations: [
+        {
+          category: "Modernize Distribution",
+          media: ["Live Links", "Multi Model"],
+          drugDev: ["Digital therapeutics", "Direct-to-consumer"]
+        },
+        {
+          category: "Quantitative Frameworks", 
+          media: ["LTV/CAC Comparison", "Creator Economy Valuation"],
+          drugDev: ["Market Sizing", "Impact of Cost/Time to Market"]
+        },
+        {
+          category: "Proprietary Data + Analysis",
+          media: ["Turnaround Playbook", "Deal Flow and Velocity"],
+          drugDev: ["Real-world evidence", "Biomarker data"]
+        },
+        {
+          category: "Forecasting First Principles",
+          media: ["Trend Prediction", "TAM"],
+          drugDev: ["Opprotunity Areas", "Long Term Impact"]
+        }
       ]
     },
 

@@ -399,12 +399,82 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
     </motion.div>
   );
 
+  const renderPremiumSlide = (slide: Slide) => (
+    <motion.div 
+      initial={{ opacity: 0, y: 40 }} 
+      whileInView={{ opacity: 1, y: 0 }} 
+      viewport={{ once: true }} 
+      transition={{ duration: 0.6 }}
+      className="w-full max-w-6xl aspect-video mx-auto"
+    >
+      <div className="h-full bg-black/10 backdrop-blur-md rounded-3xl border border-gray-400/30 shadow-2xl overflow-hidden flex flex-col">
+        
+        {/* Header */}
+        <div className="flex-shrink-0 bg-white/50 border-b border-gray-400/30 px-8 py-6">
+          <h2 className="text-2xl md:text-3xl text-gray-800 font-bold text-center mb-2">
+            {slide.title}
+          </h2>
+          <p className="text-gray-600 text-center">{slide.subtitle}</p>
+        </div>
+
+        {/* Premium table content */}
+        <div className="flex-1 p-8">
+          <div className="space-y-4">
+            {/* Header row */}
+            <div className="grid grid-cols-3 gap-4 mb-6">
+              <div className="bg-purple-100/80 rounded-lg p-4 text-center">
+                <h3 className="text-lg font-bold text-purple-800">Universal Category</h3>
+              </div>
+              <div className="bg-blue-100/80 rounded-lg p-4 text-center">
+                <h3 className="text-lg font-bold text-blue-800">Media Applications</h3>
+              </div>
+              <div className="bg-green-100/80 rounded-lg p-4 text-center">
+                <h3 className="text-lg font-bold text-green-800">Drug Dev Applications</h3>
+              </div>
+            </div>
+            
+            {/* Content rows */}
+            {slide.premiumRecommendations?.map((rec, idx) => (
+              <div key={idx} className="grid grid-cols-3 gap-4">
+                <div className="bg-white/60 rounded-lg p-4 border border-gray-300/50">
+                  <h4 className="text-base font-bold text-gray-800 text-center">
+                    {rec.category}
+                  </h4>
+                </div>
+                <div className="bg-white/60 rounded-lg p-4 border border-gray-300/50">
+                  <div className="text-center space-y-1">
+                    {rec.media.map((item, itemIdx) => (
+                      <p key={itemIdx} className="text-sm text-gray-700">
+                        {item}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-white/60 rounded-lg p-4 border border-gray-300/50">
+                  <div className="text-center space-y-1">
+                    {rec.drugDev.map((item, itemIdx) => (
+                      <p key={itemIdx} className="text-sm text-gray-700">
+                        {item}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+
   const renderSlideContent = (slide: Slide, index: number) => {
     switch (slide.template) {
       case 'critique':
         return renderCritiqueSlide(slide);
       case 'research':
         return renderResearchSlide(slide);
+      case 'premium':
+        return renderPremiumSlide(slide);
       case 'title':
       default:
         return renderTitleSlide(slide);
