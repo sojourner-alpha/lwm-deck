@@ -56,14 +56,11 @@ export const learnWithMeDeck: DeckConfig = {
       category: "general",
       template: "research",
       title: "Presentation Structure",
-      subtitle: "Flow of Analysis & Methodology",
+      subtitle: "4 Main Sections with Individual Slide Components",
       researchSteps: [
         "Introduction & Scope",
-        "Critique Section: Deep dive on Media (1), Light touch on Drug Development (1)",
-        "Premium Universal Recommendations",
-        "Research Methodology: Universal Framework",
-        "Application: Broad Topic (China Market Entry)",
-        "Application: Technical Topic (GLP-1 Therapeutics)",
+        "Critique Section Analysis", 
+        "Research Methodology Framework",
         "Synthesis & Next Steps"
       ]
     },

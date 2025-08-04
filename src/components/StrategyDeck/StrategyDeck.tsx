@@ -166,12 +166,12 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
       whileInView={{ opacity: 1, y: 0 }} 
       viewport={{ once: true }} 
       transition={{ duration: 0.6 }}
-      className="w-full max-w-6xl mx-auto"
+      className="w-full max-w-6xl aspect-video mx-auto"
     >
-      <div className="bg-black/10 backdrop-blur-md rounded-3xl border border-gray-400/30 shadow-2xl overflow-hidden">
+      <div className="h-full bg-black/10 backdrop-blur-md rounded-3xl border border-gray-400/30 shadow-2xl overflow-hidden flex flex-col">
         
         {/* Header */}
-        <div className="bg-white/50 border-b border-gray-400/30 px-8 py-6">
+        <div className="flex-shrink-0 bg-white/50 border-b border-gray-400/30 px-8 py-6">
           <h2 className="text-2xl md:text-3xl text-gray-800 font-bold text-center mb-2">
             {slide.title}
           </h2>
@@ -179,33 +179,121 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
         </div>
 
         {/* Flow chart content */}
-        <div className="p-8">
-          <div className="space-y-4">
-            {slide.researchSteps?.map((step, idx) => (
-              <div key={idx} className="flex items-center space-x-4">
-                {/* Step number */}
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
-                  {idx + 1}
-                </div>
-                
-                {/* Step content */}
-                <div className="flex-1 bg-white/60 rounded-lg p-4 border border-gray-300/50">
-                  <p className="text-gray-800 text-sm md:text-base leading-relaxed">
-                    {step}
-                  </p>
-                </div>
-                
-                {/* Arrow (except for last item) */}
-                {idx < (slide.researchSteps?.length || 0) - 1 && (
-                  <div className="flex-shrink-0 text-gray-400">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                    </svg>
-                  </div>
-                )}
+        <div className="flex-1 p-8 flex items-center justify-center">
+          {slide.key === 'Structure' ? (
+            // Special horizontal layout ONLY for Structure slide
+            <div className="grid grid-cols-4 gap-4 w-full max-w-5xl">
+            
+            {/* Column 1: Intro */}
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold mb-3">
+                1
               </div>
-            ))}
-          </div>
+              <div className="bg-white/60 rounded-lg p-4 border border-gray-300/50 w-full text-center">
+                <p className="text-gray-800 text-sm font-medium">Intro / Scope</p>
+              </div>
+            </div>
+
+            {/* Column 2: Critique */}
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold mb-3">
+                2
+              </div>
+              <div className="bg-purple-100/80 rounded-lg p-3 border border-purple-300/50 w-full mb-2">
+                <p className="text-purple-800 text-sm font-bold uppercase tracking-wide text-center">CRITIQUE</p>
+              </div>
+              <div className="space-y-2 w-full">
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 bg-purple-400 text-white rounded-full flex items-center justify-center text-xs">→</div>
+                  <div className="bg-white/40 rounded p-2 border border-gray-300/30 flex-1">
+                    <p className="text-gray-700 text-xs">Media Landscape</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 bg-purple-400 text-white rounded-full flex items-center justify-center text-xs">→</div>
+                  <div className="bg-white/40 rounded p-2 border border-gray-300/30 flex-1">
+                    <p className="text-gray-700 text-xs">Drug Development</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 bg-purple-400 text-white rounded-full flex items-center justify-center text-xs">→</div>
+                  <div className="bg-white/40 rounded p-2 border border-gray-300/30 flex-1">
+                    <p className="text-gray-700 text-xs">Premium Recommendations</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Column 3: Research */}
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold mb-3">
+                3
+              </div>
+              <div className="bg-purple-100/80 rounded-lg p-3 border border-purple-300/50 w-full mb-2">
+                <p className="text-purple-800 text-sm font-bold uppercase tracking-wide text-center">RESEARCH</p>
+              </div>
+              <div className="space-y-2 w-full">
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 bg-purple-400 text-white rounded-full flex items-center justify-center text-xs">→</div>
+                  <div className="bg-white/40 rounded p-2 border border-gray-300/30 flex-1">
+                    <p className="text-gray-700 text-xs">Universal Framework</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 bg-purple-400 text-white rounded-full flex items-center justify-center text-xs">→</div>
+                  <div className="bg-white/40 rounded p-2 border border-gray-300/30 flex-1">
+                    <p className="text-gray-700 text-xs">China Application</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-4 h-4 bg-purple-400 text-white rounded-full flex items-center justify-center text-xs">→</div>
+                  <div className="bg-white/40 rounded p-2 border border-gray-300/30 flex-1">
+                    <p className="text-gray-700 text-xs">GLP-1 Application</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Column 4: Synthesis */}
+            <div className="flex flex-col items-center">
+              <div className="w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold mb-3">
+                4
+              </div>
+              <div className="bg-white/60 rounded-lg p-4 border border-gray-300/50 w-full text-center">
+                <p className="text-gray-800 text-sm font-medium">Synthesis & Next Steps</p>
+              </div>
+            </div>
+
+            </div>
+          ) : (
+            // Original vertical layout for all other research slides
+            <div className="space-y-4 w-full">
+              {slide.researchSteps?.map((step, idx) => (
+                <div key={idx} className="flex items-center space-x-4">
+                  {/* Step number */}
+                  <div className="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                    {idx + 1}
+                  </div>
+                  
+                  {/* Step content */}
+                  <div className="flex-1 bg-white/60 rounded-lg p-4 border border-gray-300/50">
+                    <p className="text-gray-800 text-sm md:text-base leading-relaxed">
+                      {step}
+                    </p>
+                  </div>
+                  
+                  {/* Arrow (except for last item) */}
+                  {idx < (slide.researchSteps?.length || 0) - 1 && (
+                    <div className="flex-shrink-0 text-gray-400">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </motion.div>
