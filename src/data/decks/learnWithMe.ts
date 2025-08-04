@@ -117,19 +117,21 @@ export const learnWithMeDeck: DeckConfig = {
       sourceLink: "[Source document link - to be added]",
       critiqueContent: {
         positive: [
-          "[Positive feedback point 1]",
-          "[Positive feedback point 2]",
-          "[Positive feedback point 3]"
+          "Strong Graphics & Flow\nFinancing rounds by area (p12/13)\nThematic arc: drugs → bio → drugs\nClear visual progression",
+          "Excellent Technical Depth\nBridges basics to sophisticated concepts\nStep-by-step biological processes\nClear complex explanations (CRISPR, mRNA)",
+          "Real-World Grounding\nHousehold drug examples (Humira, Ozempic)\nConcrete metrics ($1B+ cost, 10-15 years, 5%)\nContemporary cases (Moderna, CRISPR)",
+          "Quality Visuals\nResolution upgrade throughout\nML application on tables/prediction (p58)\nCost and time drop visualization (p63)"
         ],
         constructive: [
-          "[Constructive feedback point 1]",
-          "[Constructive feedback point 2]",
-          "[Constructive feedback point 3]"
+          "Structure Improvements\nInclude bullet advancements for each phase (p31)\nFix unstructured/unintuitive layout (p72)\nMore consistent organization",
+          "Data Visualization Gaps\nNeed more charts and graphs\nProportionate drop-off visualization\nFollow through on cost projections",
+          "Technology Analysis Outdated\nML/AI section feels like 2021 thinking\nNo specific algorithms or architectures\nMissing data moats and competitive advantages"
         ],
         gaps: [
-          "[Gap identified 1]",
-          "[Gap identified 2]",
-          "[Gap identified 3]"
+          "Poor Data Emphasis\nKey data lost in subtext labels (p55)\nImportant information not highlighted\nCritical metrics buried",
+          "Outdated Timeline\nFeels 5 years behind, not forward-looking\nMissing current and future projections\nDelayed publication impact evident",
+          "Superficial Business Analysis\nHealthcare value chain oversimplified\nNo business model innovation discussion\nMissing M&A dynamics and competitive analysis",
+          "Missing Modern AI Revolution\n'Drug Development 2.0' feels dated\nNo AlphaFold, foundation models discussion\nMissing digital therapeutics, synthetic biology"
         ]
       }
     },
