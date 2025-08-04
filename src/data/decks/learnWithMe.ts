@@ -146,8 +146,8 @@ export const learnWithMeDeck: DeckConfig = {
       premiumRecommendations: [
         {
           category: "Modernize Distribution",
-          media: ["Live Links", "Multi Model"],
-          drugDev: ["Digital therapeutics", "Direct-to-consumer"]
+          media: ["Live Links", "Multi Model (Dogfooding)"],
+          drugDev: ["Open Source (ARC)", "ML Models (Alpha Fold)"]
         },
         {
           category: "Quantitative Frameworks", 
@@ -172,10 +172,10 @@ export const learnWithMeDeck: DeckConfig = {
       key: "Research",
       category: "education",
       template: "title",
-      headlines: ["Section 2", "Research Methodology"],
-      subtitle: "Framework for Approaching New Topics",
+      header: "Research - Methodology for Approaching New Topics",
+      headlines: ["China", "+", "GLP-1s"],
       subtext: [
-        "Systematic approach to unfamiliar subjects and markets",
+        "Systematic approach to unfamiliar subjects and markets (one broad, one technical)",
         "Scalable methodology from universal principles to specific applications"
       ]
     },
@@ -188,13 +188,13 @@ export const learnWithMeDeck: DeckConfig = {
       title: "Universal Research Methodology",
       subtitle: "7-Stage Approach to New Topics",
       researchSteps: [
-        "[Stage 1: Placeholder]",
-        "[Stage 2: Placeholder]",
-        "[Stage 3: Placeholder]",
-        "[Stage 4: Placeholder]",
-        "[Stage 5: Placeholder]",
-        "[Stage 6: Placeholder]",
-        "[Stage 7: Placeholder]"
+        "Define the Scope and Objectives",
+        "Top-Down Analysis",
+        "Bottom-Up Exploration", 
+        "Synthesis and Contextualization",
+        "Identify and Address Gaps",
+        "Strategic Implications by Stakeholder",
+        "Visualization and Communication"
       ]
     },
 

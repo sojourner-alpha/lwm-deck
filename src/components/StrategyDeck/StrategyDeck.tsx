@@ -250,7 +250,7 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
         </div>
 
         {/* Flow chart content */}
-        <div className="flex-1 p-8 flex items-center justify-center">
+        <div className="flex-1 p-4 flex items-center justify-center">
           {slide.key === 'Structure' ? (
             // Special horizontal layout ONLY for Structure slide
             <div className="flex items-center justify-between w-full max-w-6xl gap-4">
@@ -366,18 +366,18 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
 
             </div>
           ) : (
-            // Original vertical layout for all other research slides
-            <div className="space-y-4 w-full">
+            // Original vertical layout for all other research slides - COMPRESSED
+            <div className="space-y-2 w-full max-w-lg">
               {slide.researchSteps?.map((step, idx) => (
-                <div key={idx} className="flex items-center space-x-4">
+                <div key={idx} className="flex items-center space-x-3">
                   {/* Step number */}
-                  <div className="flex-shrink-0 w-8 h-8 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                  <div className="flex-shrink-0 w-7 h-7 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xs">
                     {idx + 1}
                   </div>
                   
                   {/* Step content */}
-                  <div className="flex-1 bg-white/60 rounded-lg p-4 border border-gray-300/50">
-                    <p className="text-gray-800 text-sm md:text-base leading-relaxed">
+                  <div className="flex-1 bg-white/60 rounded-lg p-3 border border-gray-300/50">
+                    <p className="text-gray-800 text-base leading-relaxed">
                       {step}
                     </p>
                   </div>
@@ -385,7 +385,7 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
                   {/* Arrow (except for last item) */}
                   {idx < (slide.researchSteps?.length || 0) - 1 && (
                     <div className="flex-shrink-0 text-gray-400">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                       </svg>
                     </div>
