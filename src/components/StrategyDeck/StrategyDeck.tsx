@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { DeckConfig, Slide } from "../../types/deck";
 
 interface StrategyDeckProps {
@@ -9,6 +9,7 @@ interface StrategyDeckProps {
 export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
   const [active, setActive] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [expandedCritiqueSections, setExpandedCritiqueSections] = useState<{[slideKey: string]: {[section: string]: boolean}}>({});
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -92,78 +93,132 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
     </motion.div>
   );
 
-  const renderCritiqueSlide = (slide: Slide) => (
-    <motion.div 
-      initial={{ opacity: 0, y: 40 }} 
-      whileInView={{ opacity: 1, y: 0 }} 
-      viewport={{ once: true }} 
-      transition={{ duration: 0.6 }}
-      className="w-full max-w-6xl mx-auto"
-    >
-      <div className="bg-black/10 backdrop-blur-md rounded-3xl border border-gray-400/30 shadow-2xl overflow-hidden">
-        
-        {/* Header */}
-        <div className="bg-white/50 border-b border-gray-400/30 px-8 py-6">
-          <h2 className="text-2xl md:text-3xl text-gray-800 font-bold text-center mb-2">
-            {slide.title}
-          </h2>
-          <p className="text-gray-600 text-center mb-4">{slide.subtitle}</p>
-          {slide.sourceLink && (
-            <p className="text-sm text-gray-500 text-center">
-              Source: {slide.sourceLink}
-            </p>
-          )}
-        </div>
+  const renderCritiqueSlide = (slide: Slide) => {
+    const toggleSection = (section: string) => {
+      setExpandedCritiqueSections(prev => ({
+        ...prev,
+        [slide.key]: {
+          ...prev[slide.key],
+          [section]: !prev[slide.key]?.[section]
+        }
+      }));
+    };
 
-        {/* Three-column content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 h-[500px]">
-          
-          {/* Positive Column */}
-          <div className="bg-green-50/80 p-6 border-r border-gray-400/20">
-            <h3 className="text-lg font-bold text-green-800 mb-4 text-center">
-              ✓ Positive
-            </h3>
-            <ul className="space-y-3">
-              {slide.critiqueContent?.positive?.map((item, idx) => (
-                <li key={idx} className="text-sm text-gray-700 leading-relaxed">
-                  • {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Constructive Column */}
-          <div className="bg-yellow-50/80 p-6 border-r border-gray-400/20">
-            <h3 className="text-lg font-bold text-yellow-800 mb-4 text-center">
-              ⚡ Constructive
-            </h3>
-            <ul className="space-y-3">
-              {slide.critiqueContent?.constructive?.map((item, idx) => (
-                <li key={idx} className="text-sm text-gray-700 leading-relaxed">
-                  • {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Gaps Column */}
-          <div className="bg-red-50/80 p-6">
-            <h3 className="text-lg font-bold text-red-800 mb-4 text-center">
-              ⚠ Gaps
-            </h3>
-            <ul className="space-y-3">
-              {slide.critiqueContent?.gaps?.map((item, idx) => (
-                <li key={idx} className="text-sm text-gray-700 leading-relaxed">
-                  • {item}
-                </li>
-              ))}
-            </ul>
+    const CritiqueColumn = ({ 
+      type, 
+      title, 
+      items, 
+      bgColor, 
+      textColor, 
+      icon 
+    }: { 
+      type: string;
+      title: string; 
+      items?: string[]; 
+      bgColor: string; 
+      textColor: string; 
+      icon: string;
+    }) => {
+      const isExpanded = expandedCritiqueSections[slide.key]?.[type] || false;
+      
+      return (
+        <div className="bg-white/60 p-6 border-r border-gray-400/20 last:border-r-0 h-[500px] flex flex-col">
+          {/* Small title button */}
+          <div className={`flex items-center justify-center ${isExpanded ? 'mb-4' : 'h-full'}`}>
+            <button
+              onClick={() => toggleSection(type)}
+              className="px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105"
+            >
+              <h3 className={`text-lg font-bold ${textColor} text-center`}>
+                {icon} {title}
+              </h3>
+            </button>
           </div>
           
+          {/* Content area */}
+          <AnimatePresence>
+            {isExpanded && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className="flex-1 bg-gray-50/80 rounded-lg p-4 overflow-y-auto"
+              >
+                <div className="space-y-4">
+                  {items?.map((item, idx) => (
+                    <div key={idx} className="text-center">
+                      <p className="text-sm text-gray-700 leading-relaxed">
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
-      </div>
-    </motion.div>
-  );
+      );
+    };
+
+    return (
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }} 
+        whileInView={{ opacity: 1, y: 0 }} 
+        viewport={{ once: true }} 
+        transition={{ duration: 0.6 }}
+        className="w-full max-w-6xl aspect-video mx-auto"
+      >
+        <div className="h-full bg-black/10 backdrop-blur-md rounded-3xl border border-gray-400/30 shadow-2xl overflow-hidden flex flex-col">
+          
+          {/* Header */}
+          <div className="flex-shrink-0 bg-white/50 border-b border-gray-400/30 px-8 py-6">
+            <h2 className="text-2xl md:text-3xl text-gray-800 font-bold text-center mb-2">
+              {slide.title}
+            </h2>
+            <p className="text-gray-600 text-center mb-4">{slide.subtitle}</p>
+            {slide.sourceLink && (
+              <p className="text-sm text-gray-500 text-center">
+                Source: {slide.sourceLink}
+              </p>
+            )}
+          </div>
+
+          {/* Three-column content */}
+          <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-0">
+            
+            <CritiqueColumn
+              type="positive"
+              title="Positive"
+              items={slide.critiqueContent?.positive}
+              bgColor="bg-green-100/80"
+              textColor="text-green-800"
+              icon="✓"
+            />
+
+            <CritiqueColumn
+              type="constructive"
+              title="Constructive"
+              items={slide.critiqueContent?.constructive}
+              bgColor="bg-yellow-100/80"
+              textColor="text-yellow-800"
+              icon="⚡"
+            />
+
+            <CritiqueColumn
+              type="gaps"
+              title="Gaps"
+              items={slide.critiqueContent?.gaps}
+              bgColor="bg-red-100/80"
+              textColor="text-red-800"
+              icon="⚠"
+            />
+            
+          </div>
+        </div>
+      </motion.div>
+    );
+  };
 
   const renderResearchSlide = (slide: Slide) => (
     <motion.div 
