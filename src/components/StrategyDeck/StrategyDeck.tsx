@@ -146,13 +146,24 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
                 className="flex-1 bg-gray-50/80 rounded-lg p-4 overflow-y-auto"
               >
                 <div className="space-y-4">
-                  {items?.map((item, idx) => (
-                    <div key={idx} className="text-center">
-                      <p className="text-sm text-gray-700 leading-relaxed">
-                        {item}
-                      </p>
-                    </div>
-                  ))}
+                  {items?.map((item, idx) => {
+                    const lines = item.split('\n');
+                    const title = lines[0];
+                    const notes = lines.slice(1);
+                    
+                    return (
+                      <div key={idx} className="text-center">
+                        <h4 className="text-sm font-bold text-gray-800 mb-2">
+                          {title}
+                        </h4>
+                        {notes.map((note, noteIdx) => (
+                          <p key={noteIdx} className="text-xs text-gray-600 leading-relaxed">
+                            {note}
+                          </p>
+                        ))}
+                      </div>
+                    );
+                  })}
                 </div>
               </motion.div>
             )}

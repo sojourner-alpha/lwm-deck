@@ -88,19 +88,21 @@ export const learnWithMeDeck: DeckConfig = {
       sourceLink: "[Source document link - to be added]",
       critiqueContent: {
         positive: [
-          "[Positive feedback point 1]",
-          "[Positive feedback point 2]",
-          "[Positive feedback point 3]"
+          "Clean Visual Design\nDirect iconography and simple layout\nNot overly dense per slide\nConsistent monochrome+1 design ethos",
+          "Strong Highlights\nLegacy system infographic (p52)\nStep function audience expansion (p85)\nBeast reach visualization (p87)\nAbundance anchor for bullish case (p88)",
+          "Effective Framework\n'Sense-making 1.0 vs 2.0' anchors concepts\nStrong conclusion linking media to politics\nClear narrative progression",
+          "Systems-Level Analysis\nLinks technology → business → social impact\nAlgorithmic optimization creates polarization\nFragmentation to governance challenges"
         ],
         constructive: [
-          "[Constructive feedback point 1]",
-          "[Constructive feedback point 2]",
-          "[Constructive feedback point 3]"
+          "Missing Key Data Points\nNews media ownership and bias (p10)\nJournalist market flow legacy→direct (p12)\nGrowth of input data to facial/eye tracking (p35)",
+          "Abstraction Layer Needs\nSense-making framework could separate:\nDistribution disruption (layer 1)\nSource disruption (layer 2)",
+          "Psychology Gap\nNo analysis of attention psychology\nWhat engagement patterns drive most attention\nBehavioral impacts missing from framework"
         ],
         gaps: [
-          "[Gap identified 1]",
-          "[Gap identified 2]",
-          "[Gap identified 3]"
+          "Limited Media Scope\nIgnores entertainment, educational (MOOCs)\nMissing gaming and other media formats\nFocus too narrow on news only",
+          "US-Centric Analysis\nSense 2.0 transition requires global view\nMissing international competitive dynamics",
+          "Poor Data Visualization\nMedia graphs ignore last 10 years\nPolicy approval vs adoption chart (p100)\nOutdated data undermines credibility",
+          "Technical Depth Missing\nLacking algorithmic analysis\nNo investment perspective included\nMarket sizing data absent"
         ]
       }
     },
