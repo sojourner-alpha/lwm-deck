@@ -203,16 +203,16 @@ export const learnWithMeDeck: DeckConfig = {
       key: "China",
       category: "market",
       template: "research",
-      title: "China Market Entry",
+      title: "China",
       subtitle: "Methodology Application - Broad Topic",
       researchSteps: [
-        "Define Scope & Objectives: [China-specific content]",
-        "Top-Down Analysis: [China-specific content]",
-        "Bottom-Up Exploration: [China-specific content]", 
-        "Synthesis & Contextualization: [China-specific content]",
-        "Identify & Address Gaps: [China-specific content]",
-        "Strategic Implications by Stakeholder: [China-specific content]",
-        "Visualization & Communication: [China-specific content]"
+        "Define Scope & Objectives: Decode China's transition from hypergrowth to fortress economy for executives and investors",
+        "Top-Down Analysis: High level research of history, culture, population, technology, finance, and macro-economic growth",
+        "Bottom-Up Exploration: Bottom up research of available data (East and West sources) on population, markets, CCP statements", 
+        "Synthesis & Contextualization: Shift to security-focused self-reliance, innovation leadership, real estate collapse, currency etc.",
+        "Identify & Address Gaps: Unknown unknowns, Taiwan flashpoint, social unrest, unreliable data, and Western short-term myopia",
+        "Strategic Implications by Stakeholder: Government, Population, Companies, Investors, Adversaries, etc.",
+        "Visualization & Communication: Compilation of broad and deep research into a concise and impactful deep dive."
       ]
     },
 
