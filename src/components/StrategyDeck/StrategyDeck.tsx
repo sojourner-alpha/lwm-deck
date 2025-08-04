@@ -46,7 +46,7 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
       whileInView={{ opacity: 1, y: 0 }} 
       viewport={{ once: true }} 
       transition={{ duration: 0.6 }}
-      className="w-full max-w-4xl aspect-video mx-auto"
+      className="w-full max-w-6xl aspect-video mx-auto"
     >
       <div className="h-full bg-black/10 backdrop-blur-md rounded-3xl border border-gray-400/30 shadow-2xl overflow-hidden flex flex-col p-6 md:p-9">
         
@@ -166,7 +166,7 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
       whileInView={{ opacity: 1, y: 0 }} 
       viewport={{ once: true }} 
       transition={{ duration: 0.6 }}
-      className="w-full max-w-5xl mx-auto"
+      className="w-full max-w-6xl mx-auto"
     >
       <div className="bg-black/10 backdrop-blur-md rounded-3xl border border-gray-400/30 shadow-2xl overflow-hidden">
         
@@ -282,7 +282,7 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
         {deck.slides.map((slide, i) => (
           <section 
             key={i} 
-            className="snap-start flex items-center justify-center h-screen relative px-4 sm:px-0 pt-32 sm:pt-0"
+            className="snap-start flex items-center justify-center h-screen relative px-4 sm:px-0 pt-32 sm:pt-0 sm:pl-64 sm:pr-8"
             data-slide-index={i}
             data-slide-key={slide.key}
           >

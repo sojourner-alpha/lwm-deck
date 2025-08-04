@@ -6,11 +6,14 @@ This is an isolated workspace for the "Learn With Me" presentation deck, extract
 ## Current Status
 ✅ **Working isolated environment** - Only LWM deck, no interference from other decks  
 ✅ **Clean builds** - Fast compilation without other deck overhead  
-✅ **Basic functionality** - Deck loads and displays slide content  
+✅ **12-slide structure** - Complete presentation flow ready for content population
+✅ **3 template types** - Title, Critique (3-column), Research (flow chart)
+✅ **GitHub backup** - Repository at https://github.com/sojourner-alpha/lwm-deck
 
 ## Deck Structure
-- **10 slides total** in the LWM deck
-- **Content areas**: Review & Critique, Research Methodology, Strategic Framework
+- **12 slides total** with structured content flow
+- **3 template types**: Title slides, Critique analysis (3-column), Research methodology (flow chart)
+- **Content areas**: Introduction, Critique Section, Premium Recommendations, Research Methodology, Applications
 - **Target audience**: Social Capital (Will Vu)
 - **Purpose**: Strategic feedback and research methodology presentation
 
@@ -26,18 +29,19 @@ This is an isolated workspace for the "Learn With Me" presentation deck, extract
 3. **Fixed build issues** - Restored react-scripts after audit fix broke it
 4. **Disabled special elements** - LWM slides show normal content instead of broken custom layouts
 
-## Current LWM Deck Content
-The deck includes:
-1. Title slide
-2. Scope of Activity  
-3. Section 1: Review & Critique (section title)
-4. Media Landscape Analysis
-5. Media Landscape Value Add
-6. Drug Development Analysis  
-7. Drug Development Value Add
-8. Section 2: Research Methodology (section title)
-9. China Market Research Methodology
-10. GLP-1 Market Research Methodology
+## Current LWM Deck Content (12 Slides)
+1. **Title** (title template) - Learn With Me intro
+2. **Scope** (title template) - The prompt being responded to
+3. **Structure** (research template) - 7-step presentation flow overview
+4. **Critique** (title template) - Section 1 introduction
+5. **Media** (critique template) - 3-column analysis of media landscape research
+6. **Drug Dev** (critique template) - 3-column analysis of drug development research
+7. **Premium** (research template) - 5 universal recommendation categories
+8. **Research** (title template) - Section 2 introduction
+9. **Methodology** (research template) - 7-stage universal research approach
+10. **China** (research template) - 7-step methodology application (broad topic)
+11. **GLP-1s** (research template) - 7-step methodology application (technical topic)
+12. **Summary** (title template) - Synthesis & next steps
 
 ## Known Issues & Cleanup Needed
 - **Code cleanup**: Still contains unused imports and components from other decks
