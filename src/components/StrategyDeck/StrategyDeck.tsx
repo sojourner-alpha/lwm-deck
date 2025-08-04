@@ -50,8 +50,13 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
     >
       <div className="h-full bg-black/10 backdrop-blur-md rounded-3xl border border-gray-400/30 shadow-2xl overflow-hidden flex flex-col p-6 md:p-9">
         
-        {/* TOP SECTION - Spacer */}
+        {/* TOP SECTION - Header or Spacer */}
         <div className="flex-shrink-0 h-1/4 pt-6">
+          {slide.header && (
+            <div className="text-center">
+              <p className="text-lg md:text-xl text-purple-600 font-medium uppercase tracking-wide">{slide.header}</p>
+            </div>
+          )}
         </div>
 
         {/* MIDDLE SECTION - Title Area */}
@@ -68,7 +73,7 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
           
           {/* Subtext for non-first slides */}
           {slide.subtext && (
-            <div className="mt-6 space-y-2 text-sm sm:text-base md:text-lg leading-relaxed text-gray-600">
+            <div className="mt-16 space-y-2 text-sm sm:text-base md:text-lg leading-relaxed text-gray-600">
               {slide.subtext.map((text, idx) => (
                 <p key={idx} className="font-normal">{text}</p>
               ))}

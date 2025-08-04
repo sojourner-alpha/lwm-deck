@@ -2,6 +2,7 @@ export interface Slide {
   key: string;
   category: keyof typeof slideImageCategories;
   template?: 'title' | 'critique' | 'research';
+  header?: string;
   headlines?: string[];
   subtitle?: string;
   author?: string;

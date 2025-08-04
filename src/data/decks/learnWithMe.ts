@@ -70,8 +70,8 @@ export const learnWithMeDeck: DeckConfig = {
       key: "Critique",
       category: "market",
       template: "title",
-      headlines: ["Section 1", "Critique"],
-      subtitle: "Analysis of Existing Deep Dives",
+      header: "Critique - Analysis of Existing Deep Dives",
+      headlines: ["Media Landscape","+", "Drug Development"],
       subtext: [
         "Evaluating two existing research pieces with structured feedback",
         "Focus on strengths, constructive improvements, and strategic gaps"
