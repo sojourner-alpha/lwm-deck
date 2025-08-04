@@ -1,6 +1,7 @@
 export interface Slide {
   key: string;
   category: keyof typeof slideImageCategories;
+  template?: 'title' | 'critique' | 'research';
   headlines?: string[];
   subtitle?: string;
   author?: string;
@@ -8,6 +9,13 @@ export interface Slide {
   bullets?: string[];
   subtext?: string[];
   footer?: string;
+  sourceLink?: string;
+  critiqueContent?: {
+    positive?: string[];
+    constructive?: string[];
+    gaps?: string[];
+  };
+  researchSteps?: string[];
 }
 
 export interface DeckConfig {
