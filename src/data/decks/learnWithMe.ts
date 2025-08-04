@@ -224,13 +224,13 @@ export const learnWithMeDeck: DeckConfig = {
       title: "GLP-1 Therapeutics",
       subtitle: "Methodology Application - Technical Topic",
       researchSteps: [
-        "Define Scope & Objectives: [GLP-1 specific content]",
-        "Top-Down Analysis: [GLP-1 specific content]",
-        "Bottom-Up Exploration: [GLP-1 specific content]", 
-        "Synthesis & Contextualization: [GLP-1 specific content]",
-        "Identify & Address Gaps: [GLP-1 specific content]",
-        "Strategic Implications by Stakeholder: [GLP-1 specific content]",
-        "Visualization & Communication: [GLP-1 specific content]"
+        "Define Scope & Objectives: Decode GLP-1 market for executives and investors, understand the biological + commercial dynamics.",
+        "Top-Down Analysis: Understand scientific foundation and the overall market landscape of players and compounds.",
+        "Bottom-Up Exploration: Examine clinical trials data, early market data, performance of producers, and patient outomes.", 
+        "Synthesis & Contextualization: Connect scientific understanding with market trends and healthcare implications.",
+        "Identify & Address Gaps: Unknown unknowns, long term effects, emergent competition and alternative treatments.",
+        "Strategic Implications by Stakeholder: FDA, Researchers, Companies, Patients, Policymakers, Competitors, etc.",
+        "Visualization & Communication: Compilation of technical and deep research into a concise and impactful deep dive."
       ]
     },
 
