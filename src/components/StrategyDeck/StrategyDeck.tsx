@@ -57,18 +57,18 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
         {/* MIDDLE SECTION - Title Area */}
         <div className="flex-1 flex flex-col items-center justify-center text-center px-8">
           {slide.headlines?.map((line, idx) => (
-            <h1 key={idx} className="text-2xl md:text-3xl lg:text-4xl text-gray-800 font-bold drop-shadow-lg mb-4">
+            <h1 key={idx} className="text-3xl md:text-4xl lg:text-5xl text-gray-800 font-bold drop-shadow-lg mb-4">
               {line}
             </h1>
           ))}
           <div className="w-32 h-px mx-auto mb-4 bg-gray-400/60" />
-          <h2 className="text-lg md:text-xl text-gray-600 font-medium">
+          <h2 className="text-xl md:text-2xl text-gray-600 font-medium">
             {slide.subtitle}
           </h2>
           
           {/* Subtext for non-first slides */}
           {slide.subtext && (
-            <div className="mt-6 space-y-2 text-xs sm:text-sm md:text-base leading-relaxed text-gray-600">
+            <div className="mt-6 space-y-2 text-sm sm:text-base md:text-lg leading-relaxed text-gray-600">
               {slide.subtext.map((text, idx) => (
                 <p key={idx} className="font-normal">{text}</p>
               ))}
@@ -78,7 +78,7 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
 
         {/* BOTTOM SECTION - Footer Area */}
         <div className="flex-shrink-0 flex flex-col items-center justify-center text-center h-1/4 px-8 pb-6">
-          <h3 className="text-sm md:text-base text-gray-500 font-medium max-w-2xl leading-relaxed">
+          <h3 className="text-base md:text-lg text-gray-500 font-medium max-w-2xl leading-relaxed">
             {slide.footer || slide.author}
           </h3>
         </div>

@@ -31,8 +31,11 @@ export const learnWithMeDeck: DeckConfig = {
       template: "title",
       headlines: ["Learn With Me"],
       subtitle: "Strategic Feedback & Research Framework",
+      subtext: [
+        "Application Submission for Research Associate"
+      ],
       author: "Curt Lederle",
-      footer: "Prepared for Will Vu @ Social Capital"
+      footer: "Prepared for Will Vu, GM @ Learn With Me"
     },
 
     // 2. Scope - prompt that I am responding to
@@ -41,9 +44,9 @@ export const learnWithMeDeck: DeckConfig = {
       category: "strategy",
       template: "title",
       headlines: ["Scope"],
-      subtitle: "The Prompt I'm Responding To",
+      subtitle: "Critique Existing Deep Dive(s) + Proposed Research Methodology",
       subtext: [
-        "\"[Placeholder for your specific prompt text - will be filled in later]\""
+        "\"Once you've reviewed 1 and 2, send a loom/screen recording of you answering the two questions above...\""
       ]
     },
 

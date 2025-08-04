@@ -23,11 +23,6 @@ function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  // Update URL when deck changes
-  const handleDeckChange = (deckId: string) => {
-    setCurrentDeckId(deckId);
-    window.location.hash = deckId;
-  };
   
   const currentDeck = getDecksById(currentDeckId);
 
