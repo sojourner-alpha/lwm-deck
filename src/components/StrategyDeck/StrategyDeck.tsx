@@ -68,15 +68,15 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
             </h1>
           ))}
           <div className="w-32 h-px mx-auto mb-4 bg-gray-400/60" />
-          <h2 className="text-xl md:text-2xl text-gray-600 font-medium">
+          <h2 className={`text-xl md:text-2xl font-medium ${slide.key === 'Summary' ? 'text-purple-600' : 'text-gray-600'}`}>
             {slide.subtitle}
           </h2>
           
           {/* Subtext for non-first slides */}
           {slide.subtext && (
-            <div className="mt-16 space-y-2 text-sm sm:text-base md:text-lg leading-relaxed text-gray-600">
+            <div className="mt-16 space-y-2 text-sm sm:text-base md:text-lg leading-relaxed text-center">
               {slide.subtext.map((text, idx) => (
-                <p key={idx} className="font-normal">{text}</p>
+                <p key={idx} className={`font-normal ${slide.key === 'Title' ? 'text-purple-600' : 'text-gray-600'}`}>{text}</p>
               ))}
             </div>
           )}
@@ -537,6 +537,13 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
       <div className="fixed inset-0 bg-gray-100/90" />
       <div className="fixed inset-0 bg-gradient-to-br from-gray-50/80 via-gray-100/70 to-gray-200/80" />
 
+      {/* Static Header - Desktop only */}
+      <div className="hidden sm:block fixed top-6 left-6 z-30">
+        <h1 className="text-purple-600 font-semibold text-lg">
+          Learn With Me | Research Associate | Curt Lederle
+        </h1>
+      </div>
+
       {/* Mobile Header */}
       <div className="sm:hidden fixed top-0 left-0 right-0 z-40 bg-black/60 backdrop-blur-md border-b border-white/20">
         <div className="flex flex-col space-y-2 p-3">
@@ -613,14 +620,14 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
       {/* Navigation Instructions - Desktop only */}
       <div className="hidden sm:block fixed bottom-4 right-4 z-30 bg-gray-800/20 border border-gray-600/30 backdrop-blur-md rounded-lg px-4 py-2">
         <p className="text-xs md:text-sm text-gray-600">
-          Use ↑↓ arrow keys or click navigation
+          ↑↓
         </p>
       </div>
 
       {/* Static Footer */}
-      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-30 bg-gray-800/20 border border-gray-600/30 backdrop-blur-md rounded-lg px-3 sm:px-4 py-2">
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 sm:left-[calc(50%+8rem)] z-30 bg-gray-800/20 border border-gray-600/30 backdrop-blur-md rounded-lg px-3 sm:px-4 py-2">
         <p className="text-xs sm:text-sm text-gray-600">
-          Prepared by {deck.author}
+          Prepared by {deck.author} for Will Vu
         </p>
       </div>
       

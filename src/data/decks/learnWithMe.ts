@@ -85,7 +85,7 @@ export const learnWithMeDeck: DeckConfig = {
       template: "critique",
       title: "Media Landscape Analysis",
       subtitle: "Critique of Existing Research",
-      sourceLink: "[Source document link - to be added]",
+      sourceLink: "The Media Landscape Sense Making 2.pdf",
       critiqueContent: {
         positive: [
           "Clean Visual Design\nDirect iconography and simple layout\nNot overly dense per slide\nConsistent monochrome+1 design ethos",
@@ -114,7 +114,7 @@ export const learnWithMeDeck: DeckConfig = {
       template: "critique",
       title: "Drug Development Analysis",
       subtitle: "Critique of Existing Research",
-      sourceLink: "[Source document link - to be added]",
+      sourceLink: "Deep Dive: A Primer On Drug Development.pdf",
       critiqueContent: {
         positive: [
           "Strong Graphics & Flow\nFinancing rounds by area (p12/13)\nThematic arc: drugs → bio → drugs\nClear visual progression",
@@ -239,12 +239,14 @@ export const learnWithMeDeck: DeckConfig = {
       key: "Summary",
       category: "strategy",
       template: "title",
-      headlines: ["Summary"],
-      subtitle: "Synthesis & Next Steps",
+      headlines: ["Uniquely Qualified Research Associate"],
+      subtitle: "Demonstrated Core Competencies for Learn With Me",
       subtext: [
-        "Demonstrated systematic approach to critique and research methodology",
-        "Applied universal framework to diverse topics and complexity levels",
-        "Strong interest in contributing this analytical approach to your team"
+        "✓ Critical Analysis",
+        "✓ Systematic Methodology",
+        "✓ Stakeholder Thinking",
+        "✓ Practical Application",
+        "✓ Ready to Hit the Ground Running",
       ]
     }
   ]
