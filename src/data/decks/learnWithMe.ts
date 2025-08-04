@@ -206,13 +206,13 @@ export const learnWithMeDeck: DeckConfig = {
       title: "China Market Entry",
       subtitle: "Methodology Application - Broad Topic",
       researchSteps: [
-        "[China step 1: Placeholder]",
-        "[China step 2: Placeholder]",
-        "[China step 3: Placeholder]",
-        "[China step 4: Placeholder]",
-        "[China step 5: Placeholder]",
-        "[China step 6: Placeholder]",
-        "[China step 7: Placeholder]"
+        "Define Scope & Objectives: [China-specific content]",
+        "Top-Down Analysis: [China-specific content]",
+        "Bottom-Up Exploration: [China-specific content]", 
+        "Synthesis & Contextualization: [China-specific content]",
+        "Identify & Address Gaps: [China-specific content]",
+        "Strategic Implications by Stakeholder: [China-specific content]",
+        "Visualization & Communication: [China-specific content]"
       ]
     },
 
@@ -224,13 +224,13 @@ export const learnWithMeDeck: DeckConfig = {
       title: "GLP-1 Therapeutics",
       subtitle: "Methodology Application - Technical Topic",
       researchSteps: [
-        "[GLP-1 step 1: Placeholder]",
-        "[GLP-1 step 2: Placeholder]",
-        "[GLP-1 step 3: Placeholder]",
-        "[GLP-1 step 4: Placeholder]",
-        "[GLP-1 step 5: Placeholder]",
-        "[GLP-1 step 6: Placeholder]",
-        "[GLP-1 step 7: Placeholder]"
+        "Define Scope & Objectives: [GLP-1 specific content]",
+        "Top-Down Analysis: [GLP-1 specific content]",
+        "Bottom-Up Exploration: [GLP-1 specific content]", 
+        "Synthesis & Contextualization: [GLP-1 specific content]",
+        "Identify & Address Gaps: [GLP-1 specific content]",
+        "Strategic Implications by Stakeholder: [GLP-1 specific content]",
+        "Visualization & Communication: [GLP-1 specific content]"
       ]
     },
 

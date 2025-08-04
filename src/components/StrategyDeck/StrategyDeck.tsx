@@ -367,31 +367,75 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
             </div>
           ) : (
             // Original vertical layout for all other research slides - COMPRESSED
-            <div className="space-y-2 w-full max-w-lg">
-              {slide.researchSteps?.map((step, idx) => (
-                <div key={idx} className="flex items-center space-x-3">
-                  {/* Step number */}
-                  <div className="flex-shrink-0 w-7 h-7 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xs">
-                    {idx + 1}
-                  </div>
+            <div className={`space-y-2 w-full ${(slide.key === 'China' || slide.key === 'GLP-1s') ? 'max-w-5xl' : 'max-w-lg'}`}>
+              {slide.researchSteps?.map((step, idx) => {
+                // Only apply stage title separation for China and GLP-1 slides
+                const isApplicationSlide = slide.key === 'China' || slide.key === 'GLP-1s';
+                
+                if (isApplicationSlide) {
+                  const parts = step.split(': ');
+                  const stageTitle = parts[0];
+                  const content = parts[1] || step;
                   
-                  {/* Step content */}
-                  <div className="flex-1 bg-white/60 rounded-lg p-3 border border-gray-300/50">
-                    <p className="text-gray-800 text-base leading-relaxed">
-                      {step}
-                    </p>
-                  </div>
-                  
-                  {/* Arrow (except for last item) */}
-                  {idx < (slide.researchSteps?.length || 0) - 1 && (
-                    <div className="flex-shrink-0 text-gray-400">
-                      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                      </svg>
+                  return (
+                    <div key={idx} className="flex items-center space-x-3">
+                      {/* Step number */}
+                      <div className="flex-shrink-0 w-7 h-7 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xs">
+                        {idx + 1}
+                      </div>
+                      
+                      {/* Stage title (no background) */}
+                      <div className="flex-shrink-0">
+                        <p className="text-purple-600 text-sm font-semibold">
+                          {stageTitle}
+                        </p>
+                      </div>
+                      
+                      {/* Step content */}
+                      <div className="flex-1 bg-white/60 rounded-lg p-3 border border-gray-300/50">
+                        <p className="text-gray-800 text-base leading-relaxed">
+                          {content}
+                        </p>
+                      </div>
+                      
+                      {/* Arrow (except for last item) */}
+                      {idx < (slide.researchSteps?.length || 0) - 1 && (
+                        <div className="flex-shrink-0 text-gray-400">
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                          </svg>
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-              ))}
+                  );
+                } else {
+                  // Original layout for Methodology slide
+                  return (
+                    <div key={idx} className="flex items-center space-x-3">
+                      {/* Step number */}
+                      <div className="flex-shrink-0 w-7 h-7 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xs">
+                        {idx + 1}
+                      </div>
+                      
+                      {/* Step content */}
+                      <div className="flex-1 bg-white/60 rounded-lg p-3 border border-gray-300/50">
+                        <p className="text-gray-800 text-base leading-relaxed">
+                          {step}
+                        </p>
+                      </div>
+                      
+                      {/* Arrow (except for last item) */}
+                      {idx < (slide.researchSteps?.length || 0) - 1 && (
+                        <div className="flex-shrink-0 text-gray-400">
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                          </svg>
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+              })}
             </div>
           )}
         </div>
