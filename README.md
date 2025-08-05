@@ -61,7 +61,6 @@ This presentation demonstrates core competencies through:
 - **Framer Motion** for smooth animations and transitions
 - **Tailwind CSS** with custom configurations
 - **Hash-based routing** for simple navigation
-- **HTML2Canvas & jsPDF** for PDF export capabilities
 
 ## 🏃‍♂️ Quick Start
 
@@ -92,7 +91,6 @@ src/
 ├── types/
 │   └── deck.ts                   # TypeScript interfaces
 ├── utils/
-│   └── pdfExport.ts             # PDF generation utilities
 └── App.tsx                       # Application entry point
 ```
 
