@@ -12,7 +12,8 @@ This presentation demonstrates core competencies through:
 
 ## 🚀 Live Demo
 
-View the presentation at: [GitHub Pages URL - to be deployed]
+**Live Presentation**: https://sojourner-alpha.github.io/lwm-deck  
+**Loom Recording**: https://www.loom.com/share/7e31b825b9814564932ad5a605b06cd9
 
 ## 📋 Presentation Structure (12 Slides)
 
