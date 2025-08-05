@@ -84,9 +84,35 @@ export const StrategyDeck: React.FC<StrategyDeckProps> = ({ deck }) => {
 
         {/* BOTTOM SECTION - Footer Area */}
         <div className="flex-shrink-0 flex flex-col items-center justify-center text-center h-1/4 px-8 pb-6">
-          <h3 className="text-base md:text-lg text-gray-500 font-medium max-w-2xl leading-relaxed">
-            {slide.footer || slide.author}
-          </h3>
+          {slide.key === 'Title' ? (
+            <div className="space-y-4">
+              {/* Date */}
+              <p className="text-sm text-gray-500 font-medium">August 4, 2025</p>
+              
+              {/* Loom Button */}
+              <a 
+                href="https://www.loom.com/share/7e31b825b9814564932ad5a605b06cd9?sid=c578dd51-21a0-449d-9c16-9a9844d40be6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors duration-200 font-medium"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.5 5.5L17 10l-4.5 4.5v-9z"/>
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+                </svg>
+                <span>Watch Loom Recording</span>
+              </a>
+              
+              {/* Author */}
+              <h3 className="text-base md:text-lg text-gray-500 font-medium max-w-2xl leading-relaxed">
+                {slide.footer || slide.author}
+              </h3>
+            </div>
+          ) : (
+            <h3 className="text-base md:text-lg text-gray-500 font-medium max-w-2xl leading-relaxed">
+              {slide.footer || slide.author}
+            </h3>
+          )}
         </div>
 
       </div>
