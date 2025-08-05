@@ -2,6 +2,7 @@
   "name": "lwm-deck-solo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sojourner-alpha.github.io/lwm-deck",
   "dependencies": {
     "@types/node": "^16.18.68",
     "@types/react": "^18.2.42",

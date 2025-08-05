@@ -129,7 +129,6 @@ export const learnWithMeDeck: DeckConfig = {
         ],
         gaps: [
           "Poor Data Emphasis\nKey data lost in subtext labels (p55)\nImportant information not highlighted\nCritical metrics buried",
-          "Outdated Timeline\nFeels 5 years behind, not forward-looking\nMissing current and future projections\nDelayed publication impact evident",
           "Superficial Business Analysis\nHealthcare value chain oversimplified\nNo business model innovation discussion\nMissing M&A dynamics and competitive analysis",
           "Missing Modern AI Revolution\n'Drug Development 2.0' feels dated\nNo AlphaFold, foundation models discussion\nMissing digital therapeutics, synthetic biology"
         ]

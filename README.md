@@ -1,274 +1,130 @@
-# Alpha Decks
+# Learn With Me - Research Associate Application
 
-A sophisticated React TypeScript presentation system for creating interactive, animated business presentation decks. Built for professional consulting and advisory use cases with rich visualizations and mobile-responsive design.
+A sophisticated React TypeScript presentation system showcasing research methodology and critical analysis capabilities for a Research Associate position at Social Capital.
 
-## 🎯 Features
+## 🎯 Project Overview
 
-### Interactive Presentations
-- **Multiple Deck Support**: Switch between different presentation topics seamlessly
-- **Special Elements**: Interactive charts, persona cards, data visualizations, and custom layouts
-- **Keyboard Navigation**: Navigate with arrow keys for smooth presentation flow
-- **Hash-based Routing**: Direct links to specific decks via URL fragments
-- **Collapsible Navigation**: Efficient deck switching with minimal UI footprint
+This presentation demonstrates core competencies through:
+- **Critical Analysis** of existing research pieces (Media Landscape & Drug Development)
+- **Systematic Research Methodology** applied to diverse topics (China & GLP-1 Therapeutics)
+- **Strategic Thinking** with premium value-add recommendations
+- **Professional Presentation** with interactive UI and polished design
 
-### Advanced UI Components
-- **Animated Transitions**: Smooth slide transitions with Framer Motion
-- **Professional Styling**: Backdrop blur effects, gradients, and modern glass-morphism design
-- **Interactive Elements**: Toggleable content, modal overlays, and hover effects
-- **Brand Integration**: Professional logo placement and deck-specific styling
-- **Responsive Design**: Optimized for desktop presentation mode
+## 🚀 Live Demo
 
-### Content Management
-- **Flexible Slide Structure**: Support for bullets, subtext, headlines, and custom layouts
-- **Image Management**: Organized background images with category-based structure
-- **Extensible Data Model**: Easy to add new decks and slide types
-- **Special Slide Types**: Custom visualizations for specific content types
+View the presentation at: [GitHub Pages URL - to be deployed]
 
-## 🚀 Current Decks
+## 📋 Presentation Structure (12 Slides)
 
-### 1. Family Office Practice
-**Business Strategy Presentation**
-- Market landscape analysis with interactive growth charts
-- Service offering breakdown with Odgers Berndtson branding
-- Risk assessment and competitive positioning
-- Professional styling with custom visual elements
+### Section 1: Introduction & Scope
+1. **Title** - Professional introduction and application context
+2. **Scope** - Presentation objectives and response framework  
+3. **Structure** - Visual workflow overview with 4-column layout
 
-### 2. AI 101 for Financial Professionals (1st Call)
-**Educational Presentation for Axxcess Wealth Management**
-- Interactive AI model comparison matrix
-- Baseball card-style persona presentations (The Synthesist, Analyst, Ideator, Tutor, Coder)
-- Tool recommendation workflow with clickable links
-- RACE framework visualization with detailed examples
-- S-curve adoption graphics with market positioning
-- Comprehensive resource library and next steps
+### Section 2: Critical Analysis
+4. **Critique Section** - Introduction to analytical approach
+5. **Media Landscape Analysis** - Interactive 3-column critique with expandable sections
+6. **Drug Development Analysis** - Interactive 3-column critique with expandable sections
+7. **Premium Recommendations** - 4-category value-add matrix
 
-### 3. AI Implementation Strategy (2nd Call)
-**Strategic Follow-up for Axxcess Wealth Management**
-- Pain-point synthesis from initial consultation
-- Interactive Q&A framework with Mike/Kevin toggle
-- AI value-add opportunities with detailed implementation scenarios
-- Clean, professional layout with AWM branding
-- Strategic roadmap and next steps
+### Section 3: Research Methodology
+8. **Research Section** - Introduction to systematic approach
+9. **Universal Methodology** - 7-stage research framework
+10. **China Application** - Methodology applied to broad geopolitical topic
+11. **GLP-1 Application** - Methodology applied to technical pharmaceutical topic
 
-### 4. Lederle Farms Development
-**Real Estate & Hospitality Investment Proposal**
-- Comprehensive business proposal with financial modeling
-- Five-phase development strategy with interactive visualizations
-- Market analysis and competitive positioning
-- Revenue projections and investment thesis
-- Sustainable technology integration roadmap
+### Section 4: Synthesis
+12. **Summary** - Key competencies and Research Associate positioning
 
-## 🛠️ Technology Stack
+## ✨ Key Features
 
-- **React 18** with TypeScript for type safety and modern development
-- **Tailwind CSS** with custom animations and responsive design
-- **Framer Motion** for smooth transitions and interactive animations
-- **Create React App** build system with optimized production builds
-- **Hash-based routing** for direct deck access
+### Interactive Elements
+- **Expandable Critique Sections**: Click to reveal detailed analysis in Positive/Constructive/Gaps format
+- **Smooth Animations**: Framer Motion transitions enhance presentation flow
+- **Keyboard Navigation**: Arrow keys for seamless slide progression
+
+### Professional Design
+- **Purple Branding**: Consistent Learn With Me color scheme
+- **Glass-morphism Effects**: Modern backdrop blur and transparency
+- **Responsive Layout**: Optimized for desktop presentation and mobile viewing
+- **Professional Typography**: Clean, readable fonts with proper hierarchy
+
+### Navigation Options
+- **Side Panel Navigation**: Fixed desktop navigation with slide jumping
+- **Mobile Menu**: Hamburger menu with grid-based slide selection  
+- **Scroll-based Navigation**: Snap-scroll behavior with automatic detection
+
+## 🛠 Technical Stack
+
+- **React 18** with TypeScript for type safety
+- **Framer Motion** for smooth animations and transitions
+- **Tailwind CSS** with custom configurations
+- **Hash-based routing** for simple navigation
+- **HTML2Canvas & jsPDF** for PDF export capabilities
+
+## 🏃‍♂️ Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+
+# Build for production
+npm run build
+
+# Run tests
+npm test
+```
 
 ## 📁 Project Structure
 
 ```
-alpha-decks/
-├── public/
-│   ├── images/
-│   │   ├── slides/              # Background images by category
-│   │   ├── AWM-logo.png         # AI deck branding
-│   │   ├── foundationmodels.png # AI model comparison chart
-│   │   └── [tool-logos]/        # AI tool logos (GPT, Claude, etc.)
-│   ├── index.html
-│   └── manifest.json
-├── src/
-│   ├── components/
-│   │   ├── DeckSelector.tsx     # Minimalist deck switching
-│   │   └── StrategyDeck/        # Main presentation component
-│   │       ├── StrategyDeck.tsx # Core presentation logic & responsive layouts
-│   │       └── SpecialElements.tsx # Interactive charts & visualizations
-│   ├── data/
-│   │   └── decks/               # Deck configurations
-│   │       ├── aiFinance.ts     # AI education decks (1st & 2nd call)
-│   │       ├── familyOffice.ts  # Business strategy deck
-│   │       ├── lederleFarms.ts  # Real estate development deck
-│   │       └── index.ts         # Deck registry & metadata
-│   ├── types/
-│   │   ├── deck.ts              # Deck and slide interfaces
-│   │   └── index.ts             # Global types
-│   ├── utils/
-│   │   └── pdfExport.ts         # PDF generation utilities
-│   ├── App.tsx                  # Main application with routing
-│   ├── index.tsx                # Entry point
-│   └── index.css                # Global styles with Tailwind
-├── package.json
-├── tailwind.config.js           # Custom Tailwind configuration
-├── tsconfig.json
-└── README.md
+src/
+├── components/
+│   └── StrategyDeck/
+│       └── StrategyDeck.tsx      # Main presentation component
+├── data/
+│   └── decks/
+│       └── learnWithMe.ts        # Complete slide content and configuration
+├── types/
+│   └── deck.ts                   # TypeScript interfaces
+├── utils/
+│   └── pdfExport.ts             # PDF generation utilities
+└── App.tsx                       # Application entry point
 ```
 
-## 🎨 Design Features
+## 🎨 Design Philosophy
 
-### Desktop Experience
-- **Immersive Full-Screen**: Cinematic presentation mode optimized for large screens
-- **Side Navigation**: Fixed navigation with deck-specific controls (AI Finance has 1st/2nd call toggle)
-- **Keyboard Shortcuts**: Professional presentation controls (arrow keys)
-- **Multi-Modal Content**: Interactive charts, data tables, and visual elements
-- **Brand-Specific Layouts**: Deck-specific sizing and styling (2nd call deck uses larger format)
+The presentation balances **analytical rigor** with **visual appeal**:
 
-### Visual Effects
-- **Backdrop Blur**: Modern glass-morphism effects throughout
-- **Custom Animations**: Slide-up, fade-in, scale, and rotation transitions
-- **Professional Gradients**: Subtle overlays and accent colors
-- **Interactive Elements**: Modal overlays, toggleable content, hover states
-- **Responsive Images**: High-quality backgrounds with category mapping
+- **Content-First**: Substantive research and critique take priority
+- **Interactive Engagement**: Expandable sections encourage exploration
+- **Professional Polish**: Clean design suitable for executive audiences
+- **Systematic Approach**: Consistent methodology across diverse topics
 
-### Special Elements
-- **AI Finance Decks**: Model comparison matrix, persona cards, tool workflows, RACE examples
-- **Family Office**: Interactive market growth charts with Odgers styling
-- **Lederle Farms**: Development timeline, financial projections, phase visualizations
+## 📊 Content Highlights
 
-## 🚀 Getting Started
+### Critical Analysis Capabilities
+- **Media Landscape**: Structured feedback on sense-making frameworks
+- **Drug Development**: Technical analysis with business implications
+- **Premium Insights**: Universal improvement categories with specific applications
 
-### Prerequisites
-- Node.js (version 16 or higher)
-- npm or yarn
+### Research Methodology
+- **7-Stage Framework**: Scalable approach from scope definition to communication
+- **Broad Application**: China market analysis demonstrating geopolitical understanding
+- **Technical Application**: GLP-1 therapeutics showing scientific and commercial insight
 
-### Installation
+## 🚀 Deployment
 
-1. **Clone the repository**
-   ```bash
-   git clone [repository-url]
-   cd alpha-decks
-   ```
+This project is optimized for GitHub Pages deployment. See deployment instructions below.
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+## 📝 License
 
-3. **Start development server**
-   ```bash
-   npm start
-   ```
-   Open [http://localhost:3000](http://localhost:3000) to view in browser
+This project is created for a specific Research Associate application and is not licensed for general use.
 
-### Available Scripts
+---
 
-- **`npm start`** - Development server with hot reload
-- **`npm build`** - Production build optimized for deployment
-- **`npm test`** - Run test suite
-- **`npm run eject`** - Eject from Create React App (irreversible)
-
-## 📊 Adding New Decks
-
-1. **Create deck configuration** in `src/data/decks/newDeck.ts`
-2. **Add slide images** to `public/images/slides/`
-3. **Register deck** in `src/data/decks/index.ts`
-4. **Add deck metadata** for selector dropdown
-5. **Implement special elements** if needed in `SpecialElements.tsx`
-
-### Example Deck Structure
-```typescript
-export const myDeck: DeckConfig = {
-  id: 'my-deck',
-  title: 'My Presentation',
-  subtitle: 'Subtitle Here',
-  author: 'Author Name',
-  description: 'Deck description',
-  slideImages: {
-    title: '/images/slides/my-title.png',
-    category: '/images/slides/category-bg.jpg'
-  },
-  slides: [
-    {
-      key: 'Title',
-      category: 'title',
-      headlines: ['My Title'],
-      subtitle: 'My Subtitle',
-      footer: 'Footer text'
-    },
-    {
-      key: 'Content',
-      category: 'strategy',
-      title: 'Content Slide',
-      bullets: ['Point 1', 'Point 2'],
-      subtext: ['Additional context']
-    }
-  ]
-};
-```
-
-## 🎮 Navigation Controls
-
-### Desktop
-- **Arrow Keys**: Navigate between slides smoothly
-- **Click Navigation**: Use side panel for quick slide jumping
-- **Deck Switching**: Minimalist dropdown selector at top center
-- **Special Controls**: AI Finance decks have 1st/2nd call toggle buttons
-
-### URL Navigation
-- **Direct Access**: `#family-office`, `#ai-finance`, `#ai-finance-2nd`, `#lederle-farms`
-- **Bookmarkable**: Hash-based routing allows direct linking to specific decks
-
-## 🔧 Customization
-
-### Styling
-- Modify `tailwind.config.js` for theme customization
-- Update `src/index.css` for global styles
-- Customize component styles with Tailwind classes
-
-### Content
-- Edit deck configurations in `src/data/decks/`
-- Replace images in `public/images/`
-- Modify special elements in `SpecialElements.tsx`
-
-### Features
-- Add new slide categories in `src/types/deck.ts`
-- Extend special elements for custom interactions
-- Integrate additional animation libraries
-
-## 🌟 Recent Updates
-
-### AI Finance Enhancements
-- **2nd Call Deck**: Complete strategic follow-up presentation
-- **Interactive Q&A**: Toggle between Mike and Kevin question sets
-- **Pain-Point Synthesis**: Visual categorization of consultation findings
-- **Clean Branding**: Logo without background, "Prepared for Axxcess Wealth Management"
-
-### Navigation Improvements
-- **Minimalist Selector**: Arrow-only button with expanded dropdown
-- **Deck-Specific Navigation**: AI Finance shows 1st/2nd call toggle
-- **Hash Routing**: Direct URL access to specific decks
-
-### Visual Polish
-- **Consistent Layouts**: Unified design patterns across all decks
-- **Professional Typography**: Improved text sizing and hierarchy
-- **Interactive Elements**: Enhanced hover states and transitions
-
-## 📱 Browser Support
-
-- **Modern browsers** with ES6+ support
-- **Desktop browsers** (Chrome, Firefox, Safari, Edge)
-- **Optimized for presentation mode** on large screens
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open Pull Request
-
-## 📄 License
-
-This project is private and proprietary. All rights reserved.
-
-## 🎯 Roadmap
-
-- [x] Multi-deck support with hash routing
-- [x] AI Finance 2nd call deck with interactive elements
-- [x] Minimalist navigation system
-- [x] Professional branding integration
-- [ ] Enhanced Lederle Farms visualizations
-- [ ] PDF export functionality
-- [ ] Presenter notes and speaker view
-- [ ] Slide transitions customization
-- [ ] Analytics and usage tracking 
+**Prepared by Curt Lederle for Will Vu**  
+*Research Associate Application - Social Capital*
