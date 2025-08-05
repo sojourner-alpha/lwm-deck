@@ -152,7 +152,7 @@ export const learnWithMeDeck: DeckConfig = {
         {
           category: "Forecasting First Principles",
           media: ["Trend Prediction", "TAM"],
-          drugDev: ["Opprotunity Areas", "Long Term Impact"]
+          drugDev: ["Opportunity Areas", "Long Term Impact"]
         }
       ]
     },
